@@ -26,10 +26,17 @@ async function update(req, res) {
   res.json({ affectedRows });
 }
 
+async function updateAvailability(req, res) {
+  const { id } = req.params;
+  const { isAvailable } = req.body;
+  const affectedRows = await vehicleModel.updateAvailability(id, isAvailable);
+  res.json({ affectedRows });
+}
+
 async function remove(req, res) {
   const { id } = req.params;
   const deletedElements = await vehicleModel.deleteById(id);
   res.json({ deletedElements });
 }
 
-module.exports = { list, getOne, create, update, remove };
+module.exports = { list, getOne, create, update, updateAvailability, remove };

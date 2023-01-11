@@ -9,6 +9,7 @@ vehicleRouter.get("/:id", vehicleController.getOne);
 vehicleRouter.post("/", vehicleController.create);
 
 vehicleRouter.put("/:id", vehicleController.update);
+vehicleRouter.put("/:id/availability", vehicleController.updateAvailability);
 
 vehicleRouter.delete("/:id", vehicleController.remove);
 

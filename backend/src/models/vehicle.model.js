@@ -36,10 +36,64 @@ async function create(vehicle) {
 }
 
 async function updateById(id, vehicle) {
-  const { ownerId, type, name, description, price, photo } = vehicle;
+  const query = "UPDATE vehicle SET";
+  const modifications = [];
+
+  if (vehicle.type) {
+    modifications.push({
+      column: "type",
+      value: vehicle.type,
+      operator: "=",
+    });
+  }
+
+  if (vehicle.name) {
+    modifications.push({
+      column: "name",
+      value: vehicle.name,
+      operator: "=",
+    });
+  }
+
+  if (vehicle.description) {
+    modifications.push({
+      column: "description",
+      value: vehicle.description,
+      operator: "=",
+    });
+  }
+
+  if (vehicle.price) {
+    modifications.push({
+      column: "price",
+      value: vehicle.price,
+      operator: "=",
+    });
+  }
+
+  if (vehicle.photo) {
+    modifications.push({
+      column: "photo",
+      value: vehicle.photo,
+      operator: "=",
+    });
+  }
+
   const [result] = await db.query(
-    "UPDATE vehicle SET owner_id = ?, type = ?, name = ?, description = ?, price = ?, photo = ? WHERE id = ?",
-    [ownerId, type, name, description, price, photo, id]
+    modifications.reduce(
+      (acc, { column, operator }, index) =>
+        `${acc}${index === 0 ? " " : ", "}${column} ${operator} ?`,
+      query
+    ),
+    modifications.map(({ value }) => value).concat(id)
+  );
+  return result.info;
+}
+
+async function updateAvailability(id, isAvailable) {
+  const [result] = await db.query(
+    "UPDATE vehicle SET is_available = ? WHERE id = ?",
+    [isAvailable, id]
   );
 
   return result.affectedRows;
@@ -64,5 +118,6 @@ module.exports = {
   getOne,
   create,
   updateById,
+  updateAvailability,
   deleteById,
 };
