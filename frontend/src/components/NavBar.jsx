@@ -1,5 +1,11 @@
+import BurgerMenu from "./BurgerMenu";
+
 function NavBar() {
-  return <div>NavBar</div>;
+  return (
+    <div>
+      <BurgerMenu />
+    </div>
+  );
 }
 
 export default NavBar;
