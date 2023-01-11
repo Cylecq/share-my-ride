@@ -56,8 +56,6 @@ INSERT INTO vehicle (owner_id, type, name, description, price, photo)
 CREATE TABLE post (
   user_id int NOT NULL,
   vehicle_id int NOT NULL,
-  start_date date NOT NULL,
-  end_date date NOT NULL,
   PRIMARY KEY (user_id, vehicle_id),
   CONSTRAINT fk_user_id_post
     FOREIGN KEY (user_id)
@@ -67,12 +65,12 @@ CREATE TABLE post (
     REFERENCES vehicle(id)
 );
 
-INSERT INTO post (user_id, vehicle_id, start_date, end_date) 
+INSERT INTO post (user_id, vehicle_id) 
   VALUES 
-    (1, 1, '2019-01-01', '2019-01-02'),
-    (2, 2, '2019-01-01', '2019-01-02'),
-    (3, 3, '2019-01-01', '2019-01-02'),
-    (4, 4, '2019-01-01', '2019-01-02')
+    (1, 1),
+    (2, 2),
+    (3, 3),
+    (4, 4)
 ;
 
 CREATE TABLE rented_vehicle (
