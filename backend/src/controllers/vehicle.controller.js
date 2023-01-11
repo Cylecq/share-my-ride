@@ -1,7 +1,8 @@
 const vehicleModel = require("../models/vehicle.model");
 
 async function list(req, res) {
-  const vehicles = await vehicleModel.getAll();
+  const { type } = req.query;
+  const vehicles = await vehicleModel.getAll(type);
   res.json(vehicles);
 }
 

@@ -1,7 +1,15 @@
 const { db } = require("./db");
 
-async function getAll() {
-  const [rows] = await db.query("SELECT * FROM vehicle");
+async function getAll(type) {
+  let query = "SELECT * FROM vehicle";
+  const values = [];
+
+  if (type) {
+    query += " WHERE type = ?";
+    values.push(type);
+  }
+
+  const [rows] = await db.query(query, values);
 
   return rows;
 }
