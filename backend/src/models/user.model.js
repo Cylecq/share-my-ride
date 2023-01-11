@@ -78,8 +78,7 @@ async function updateById(id, user) {
 }
 
 async function deleteById(id) {
-  const [res3] = await db.query("DELETE FROM post WHERE user_id = ?", [id]);
-  const [res4] = await db.query(
+  const [res3] = await db.query(
     "DELETE FROM rented_vehicle WHERE user_id = ?",
     [id]
   );
@@ -91,7 +90,6 @@ async function deleteById(id) {
     res1.affectedRows,
     res2.affectedRows,
     res3.affectedRows,
-    res4.affectedRows,
   ].reduce((acc, cur) => acc + cur);
 
   return nbDeletedElement;

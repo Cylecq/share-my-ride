@@ -1,11 +1,11 @@
 const { db } = require("./db");
 
 async function getAll(type, OwnerId) {
-  let query = "SELECT * FROM VehiclePost";
+  let query = "SELECT * FROM vehicle";
   const values = [];
 
   if (type) {
-    query += " WHERE vehicle_id IS NOT NULL AND type = ?";
+    query += " WHERE is_available = 1 AND type = ?";
     values.push(type);
   }
 
@@ -46,18 +46,15 @@ async function updateById(id, vehicle) {
 }
 
 async function deleteById(id) {
-  const [res2] = await db.query("DELETE FROM post WHERE vehicle_id = ?", [id]);
-  const [res3] = await db.query(
+  const [res2] = await db.query(
     "DELETE FROM rented_vehicle WHERE vehicle_id = ?",
     [id]
   );
   const [res1] = await db.query("DELETE FROM vehicle WHERE id = ?", [id]);
 
-  const nbDeletedElement = [
-    res1.affectedRows,
-    res2.affectedRows,
-    res3.affectedRows,
-  ].reduce((acc, cur) => acc + cur);
+  const nbDeletedElement = [res1.affectedRows, res2.affectedRows].reduce(
+    (acc, cur) => acc + cur
+  );
 
   return nbDeletedElement;
 }

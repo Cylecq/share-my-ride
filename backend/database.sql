@@ -39,37 +39,19 @@ CREATE TABLE vehicle (
   description varchar(255) NOT NULL,
   price int NOT NULL,
   photo varchar(255) NOT NULL,
+  is_available boolean NOT NULL DEFAULT true,
   PRIMARY KEY (id),
   CONSTRAINT fk_owner_id
     FOREIGN KEY (owner_id)
     REFERENCES user(id)
 );
 
-INSERT INTO vehicle (owner_id, type, name, description, price, photo) 
+INSERT INTO vehicle (owner_id, type, name, description, price, photo, is_available) 
   VALUES 
-    (1, 'bike', 'bike1', 'description1', 10, 'photo1'),
-    (2, 'bike', 'bike2', 'description2', 20, 'photo2'),
-    (3, 'bike', 'bike3', 'description3', 30, 'photo3'),
-    (4, 'bike', 'bike4', 'description4', 40, 'photo4')
-;
-
-CREATE TABLE post (
-  user_id int NOT NULL,
-  vehicle_id int NOT NULL,
-  PRIMARY KEY (user_id, vehicle_id),
-  CONSTRAINT fk_user_id_post
-    FOREIGN KEY (user_id)
-    REFERENCES user(id),
-  CONSTRAINT fk_vehicle_id_post
-    FOREIGN KEY (vehicle_id)
-    REFERENCES vehicle(id)
-);
-
-INSERT INTO post (user_id, vehicle_id) 
-  VALUES 
-    (1, 1),
-    (2, 2),
-    (3, 3)
+    (1, 'bike', 'bike1', 'description1', 10, 'photo1', 1),
+    (2, 'bike', 'bike2', 'description2', 20, 'photo2', 1),
+    (3, 'bike', 'bike3', 'description3', 30, 'photo3', 0),
+    (4, 'bike', 'bike4', 'description4', 40, 'photo4', 0)
 ;
 
 CREATE TABLE rented_vehicle (
@@ -106,10 +88,4 @@ INSERT INTO admin (first_name, last_name, email, password)
   VALUES 
     ('Michel', 'Fenetre', 'michel.fenetre@sharemaride.com', 'password1'),
     ('Jean', 'Porte', 'jean.porte@sharemaride.com', 'password2')
-;
-
-CREATE VIEW VehiclePost (id, owner_id, type, name, description, price, photo, user_id, vehicle_id) AS
-  (SELECT v.id, v.owner_id, v.type, v.name, v.description, v.price, v.photo, p.user_id, p.vehicle_id 
-  FROM vehicle AS v 
-  LEFT JOIN post AS p ON p.vehicle_id = v.id);
 ;
