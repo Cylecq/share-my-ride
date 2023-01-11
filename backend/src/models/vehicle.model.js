@@ -1,17 +1,17 @@
 const { db } = require("./db");
 
-async function getAll(type, ownerId) {
-  let query = "SELECT * FROM vehicle";
+async function getAll(type, OwnerId) {
+  let query = "SELECT * FROM VehiclePost";
   const values = [];
 
   if (type) {
-    query += " WHERE type = ?";
+    query += " WHERE vehicle_id IS NOT NULL AND type = ?";
     values.push(type);
   }
 
-  if (ownerId) {
+  if (OwnerId) {
     query += " WHERE owner_id = ?";
-    values.push(ownerId);
+    values.push(OwnerId);
   }
 
   const [rows] = await db.query(query, values);
@@ -62,4 +62,10 @@ async function deleteById(id) {
   return nbDeletedElement;
 }
 
-module.exports = { getAll, getOne, create, updateById, deleteById };
+module.exports = {
+  getAll,
+  getOne,
+  create,
+  updateById,
+  deleteById,
+};

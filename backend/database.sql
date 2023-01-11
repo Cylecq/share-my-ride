@@ -69,8 +69,7 @@ INSERT INTO post (user_id, vehicle_id)
   VALUES 
     (1, 1),
     (2, 2),
-    (3, 3),
-    (4, 4)
+    (3, 3)
 ;
 
 CREATE TABLE rented_vehicle (
@@ -91,8 +90,7 @@ INSERT INTO rented_vehicle (user_id, vehicle_id, start_date, end_date)
   VALUES 
     (1, 1, '2019-01-01', '2019-01-02'),
     (2, 2, '2019-01-01', '2019-01-02'),
-    (3, 3, '2019-01-01', '2019-01-02'),
-    (4, 4, '2019-01-01', '2019-01-02')
+    (3, 3, '2019-01-01', '2019-01-02')
 ;
 
 CREATE TABLE admin (
@@ -108,4 +106,10 @@ INSERT INTO admin (first_name, last_name, email, password)
   VALUES 
     ('Michel', 'Fenetre', 'michel.fenetre@sharemaride.com', 'password1'),
     ('Jean', 'Porte', 'jean.porte@sharemaride.com', 'password2')
+;
+
+CREATE VIEW VehiclePost (id, owner_id, type, name, description, price, photo, user_id, vehicle_id) AS
+  (SELECT v.id, v.owner_id, v.type, v.name, v.description, v.price, v.photo, p.user_id, p.vehicle_id 
+  FROM vehicle AS v 
+  LEFT JOIN post AS p ON p.vehicle_id = v.id);
 ;
