@@ -54,21 +54,22 @@ INSERT INTO vehicle (owner_id, type, name, description, price, photo, is_availab
     (4, 'bike', 'bike4', 'description4', 40, 'photo4', 0)
 ;
 
-CREATE TABLE rented_vehicle (
+CREATE TABLE rent (
+  id int NOT NULL AUTO_INCREMENT,
   user_id int NOT NULL,
   vehicle_id int NOT NULL,
   start_date date NOT NULL,
   end_date date NOT NULL,
-  PRIMARY KEY (user_id, vehicle_id),
-  CONSTRAINT fk_user_id_rented_vehicle
+  PRIMARY KEY (id),
+  CONSTRAINT fk_user_id
     FOREIGN KEY (user_id)
     REFERENCES user(id),
-  CONSTRAINT fk_vehicle_id_rented_vehicle
+  CONSTRAINT fk_vehicle_id
     FOREIGN KEY (vehicle_id)
     REFERENCES vehicle(id)
 );
 
-INSERT INTO rented_vehicle (user_id, vehicle_id, start_date, end_date) 
+INSERT INTO rent (user_id, vehicle_id, start_date, end_date) 
   VALUES 
     (1, 1, '2019-01-01', '2019-01-02'),
     (2, 2, '2019-01-01', '2019-01-02'),
