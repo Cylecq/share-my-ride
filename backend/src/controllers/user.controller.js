@@ -46,8 +46,8 @@ async function remove(req, res) {
     return;
   }
 
-  const affectedRows = await userModel.deleteById(req.params.id);
-  res.status(200).json({ affectedRows });
+  const deletedElements = await userModel.deleteById(req.params.id);
+  res.status(200).json({ deletedElements });
 }
 
 module.exports = { list, get, create, update, remove };

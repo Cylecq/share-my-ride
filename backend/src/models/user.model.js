@@ -78,9 +78,23 @@ async function updateById(id, user) {
 }
 
 async function deleteById(id) {
-  const [result] = await db.query("DELETE FROM user WHERE id = ?", [id]);
+  const [res3] = await db.query("DELETE FROM post WHERE user_id = ?", [id]);
+  const [res4] = await db.query(
+    "DELETE FROM rented_vehicle WHERE user_id = ?",
+    [id]
+  );
+  const [res2] = await db.query("DELETE FROM vehicle WHERE owner_id = ?", [id]);
 
-  return result.affectedRows;
+  const [res1] = await db.query("DELETE FROM user WHERE id = ?", [id]);
+
+  const nbDeletedElement = [
+    res1.affectedRows,
+    res2.affectedRows,
+    res3.affectedRows,
+    res4.affectedRows,
+  ].reduce((acc, cur) => acc + cur);
+
+  return nbDeletedElement;
 }
 
 module.exports = { getAll, getById, create, updateById, deleteById };
