@@ -4,7 +4,7 @@ CREATE DATABASE `share-ma-ride`;
 
 USE `share-ma-ride`;
 
-DROP TABLE IF EXISTS `user`, `vehicule`, `post`, `rented-vehicule`, `admin`;
+DROP TABLE IF EXISTS `user`, `vehicle`, `post`, `rented-vehicle`, `admin`;
 
 
 CREATE TABLE user (
@@ -31,7 +31,7 @@ INSERT INTO user (first_name, last_name, email, password, phone_number, city, ad
     ('John4', 'Doe4', 'john.doe4@johndoe.com', 'password4', 'phone_number4', 'paris', '4 rue de john doe', '75001', 5, 'photo4', 'id_card4')
 ;
 
-CREATE TABLE vehicule (
+CREATE TABLE vehicle (
   id int NOT NULL AUTO_INCREMENT,
   owner_id int NOT NULL,
   type varchar(255) NOT NULL,
@@ -45,7 +45,7 @@ CREATE TABLE vehicule (
     REFERENCES user(id)
 );
 
-INSERT INTO vehicule (owner_id, type, name, description, price, photo) 
+INSERT INTO vehicle (owner_id, type, name, description, price, photo) 
   VALUES 
     (1, 'bike', 'bike1', 'description1', 10, 'photo1'),
     (2, 'bike', 'bike2', 'description2', 20, 'photo2'),
@@ -55,19 +55,19 @@ INSERT INTO vehicule (owner_id, type, name, description, price, photo)
 
 CREATE TABLE post (
   user_id int NOT NULL,
-  vehicule_id int NOT NULL,
+  vehicle_id int NOT NULL,
   start_date date NOT NULL,
   end_date date NOT NULL,
-  PRIMARY KEY (user_id, vehicule_id),
+  PRIMARY KEY (user_id, vehicle_id),
   CONSTRAINT fk_user_id_post
     FOREIGN KEY (user_id)
     REFERENCES user(id),
-  CONSTRAINT fk_vehicule_id_post
-    FOREIGN KEY (vehicule_id)
-    REFERENCES vehicule(id)
+  CONSTRAINT fk_vehicle_id_post
+    FOREIGN KEY (vehicle_id)
+    REFERENCES vehicle(id)
 );
 
-INSERT INTO post (user_id, vehicule_id, start_date, end_date) 
+INSERT INTO post (user_id, vehicle_id, start_date, end_date) 
   VALUES 
     (1, 1, '2019-01-01', '2019-01-02'),
     (2, 2, '2019-01-01', '2019-01-02'),
@@ -75,21 +75,21 @@ INSERT INTO post (user_id, vehicule_id, start_date, end_date)
     (4, 4, '2019-01-01', '2019-01-02')
 ;
 
-CREATE TABLE rented_vehicule (
+CREATE TABLE rented_vehicle (
   user_id int NOT NULL,
-  vehicule_id int NOT NULL,
+  vehicle_id int NOT NULL,
   start_date date NOT NULL,
   end_date date NOT NULL,
-  PRIMARY KEY (user_id, vehicule_id),
-  CONSTRAINT fk_user_id_rented_vehicule
+  PRIMARY KEY (user_id, vehicle_id),
+  CONSTRAINT fk_user_id_rented_vehicle
     FOREIGN KEY (user_id)
     REFERENCES user(id),
-  CONSTRAINT fk_vehicule_id_rented_vehicule
-    FOREIGN KEY (vehicule_id)
-    REFERENCES vehicule(id)
+  CONSTRAINT fk_vehicle_id_rented_vehicle
+    FOREIGN KEY (vehicle_id)
+    REFERENCES vehicle(id)
 );
 
-INSERT INTO rented_vehicule (user_id, vehicule_id, start_date, end_date) 
+INSERT INTO rented_vehicle (user_id, vehicle_id, start_date, end_date) 
   VALUES 
     (1, 1, '2019-01-01', '2019-01-02'),
     (2, 2, '2019-01-01', '2019-01-02'),
