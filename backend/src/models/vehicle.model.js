@@ -1,12 +1,17 @@
 const { db } = require("./db");
 
-async function getAll(type) {
+async function getAll(type, ownerId) {
   let query = "SELECT * FROM vehicle";
   const values = [];
 
   if (type) {
     query += " WHERE type = ?";
     values.push(type);
+  }
+
+  if (ownerId) {
+    query += " WHERE owner_id = ?";
+    values.push(ownerId);
   }
 
   const [rows] = await db.query(query, values);
