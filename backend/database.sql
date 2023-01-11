@@ -11,24 +11,24 @@ CREATE TABLE user (
   id int NOT NULL AUTO_INCREMENT,
   first_name varchar(255) NOT NULL,
   last_name varchar(255) NOT NULL,
-  email varchar(255) NOT NULL,
+  email varchar(255) NOT NULL UNIQUE,
   password varchar(255) NOT NULL,
   phone_number varchar(255) NOT NULL,
   city varchar(255) NOT NULL,
-  adress varchar(255) NOT NULL,
+  address varchar(255) NOT NULL,
   postal_code varchar(255) NOT NULL,
-  id_biked varchar(255) NOT NULL,
-  rate int NOT NULL,
+  rate int NOT NULL DEFAULT 5,
   photo varchar(255) NOT NULL,
+  id_card varchar(255) NOT NULL,
   PRIMARY KEY (id)
 );
 
-INSERT INTO user (first_name, last_name, email, password, phone_number, city, adress, postal_code, id_biked, rate, photo) 
+INSERT INTO user (first_name, last_name, email, password, phone_number, city, address, postal_code, rate, photo, id_card) 
   VALUES 
-    ("John1", "Doe1", "john.doe1@johndoe.com", "password1", "phone_number1", "paris", "1 rue de john doe", "75001",  "id_biked1", 5, "photo1"),
-    ('John2', 'Doe2', 'john.doe2@johndoe.com', 'password2', 'phone_number2', 'paris', '2 rue de john doe', '75001',  'id_biked2', 5, 'photo2'),
-    ('John3', 'Doe3', 'john.doe3@johndoe.com', 'password3', 'phone_number3', 'paris', '3 rue de john doe', '75001',  'id_biked2', 5, 'photo3'),
-    ('John4', 'Doe4', 'john.doe4@johndoe.com', 'password4', 'phone_number4', 'paris', '4 rue de john doe', '75001',  'id_biked4', 5, 'photo4')
+    ("John1", "Doe1", "john.doe1@johndoe.com", "password1", "phone_number1", "paris", "1 rue de john doe", "75001", 5, "photo1", "id_card1"),
+    ('John2', 'Doe2', 'john.doe2@johndoe.com', 'password2', 'phone_number2', 'paris', '2 rue de john doe', '75001', 5, 'photo2', 'id_card2'),
+    ('John3', 'Doe3', 'john.doe3@johndoe.com', 'password3', 'phone_number3', 'paris', '3 rue de john doe', '75001', 5, 'photo3', 'id_card3'),
+    ('John4', 'Doe4', 'john.doe4@johndoe.com', 'password4', 'phone_number4', 'paris', '4 rue de john doe', '75001', 5, 'photo4', 'id_card4')
 ;
 
 CREATE TABLE vehicule (
