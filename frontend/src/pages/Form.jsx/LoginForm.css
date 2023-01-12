@@ -60,10 +60,10 @@ h1 {
 }
 
 /* h1 {
-  margin: auto;
-  font-size: 3.5rem;
-  font-weight: 300;
-} */
+    margin: auto;
+    font-size: 3.5rem;
+    font-weight: 300;
+  } */
 
 .loginform {
   display: flex;
@@ -142,8 +142,8 @@ button:after {
   bottom: 0;
   background: var(--secondary-color);
   /* box-shadow: -7px -7px 20px 0px rgba(255, 255, 255, 0.9),
-    -4px -4px 5px 0px rgba(255, 255, 255, 0.9),
-    7px 7px 20px 0px rgba(0, 0, 0, 0.2), 4px 4px 5px 0px rgba(0, 0, 0, 0.3); */
+      -4px -4px 5px 0px rgba(255, 255, 255, 0.9),
+      7px 7px 20px 0px rgba(0, 0, 0, 0.2), 4px 4px 5px 0px rgba(0, 0, 0, 0.3); */
   transition: all 0.3s ease;
 }
 button:before {
