@@ -12,32 +12,39 @@ async function getById(id) {
   return rows[0];
 }
 
-async function create(user) {
+async function getByEmailWithPassword(email) {
+  const [rows] = await db.query("SELECT * FROM user WHERE email = ?", [email]);
+
+  if (rows.length === 0) {
+    return null;
+  }
+
+  return rows[0];
+}
+
+async function create(user, photo) {
   const {
     firstName,
     lastName,
     email,
-    hashedPassword,
+    password,
     phoneNumber,
     city,
     address,
     postalCode,
-    photo,
-    idCard,
   } = user;
   const [result] = await db.query(
-    "INSERT INTO user (first_name, last_name, email, hashed_password, phone_number, city, address, postal_code, photo, id_card) VALUES (?, ?, ?, ?, ?, ?, ?, ? , ?, ?)",
+    "INSERT INTO user (first_name, last_name, email, hashed_password, phone_number, city, address, postal_code, photo) VALUES (?, ?, ?, ?, ?, ?, ?, ? ,?)",
     [
       firstName,
       lastName,
       email,
-      hashedPassword,
+      password,
       phoneNumber,
       city,
       address,
       postalCode,
       photo,
-      idCard,
     ]
   );
 
@@ -49,7 +56,7 @@ async function updateById(id, user) {
     firstName,
     lastName,
     email,
-    hashedPassword,
+    password,
     phoneNumber,
     city,
     address,
@@ -63,7 +70,7 @@ async function updateById(id, user) {
       firstName,
       lastName,
       email,
-      hashedPassword,
+      password,
       phoneNumber,
       city,
       address,
@@ -78,10 +85,7 @@ async function updateById(id, user) {
 }
 
 async function deleteById(id) {
-  const [res3] = await db.query(
-    "DELETE FROM rented_vehicle WHERE user_id = ?",
-    [id]
-  );
+  const [res3] = await db.query("DELETE FROM rent WHERE user_id = ?", [id]);
   const [res2] = await db.query("DELETE FROM vehicle WHERE owner_id = ?", [id]);
 
   const [res1] = await db.query("DELETE FROM user WHERE id = ?", [id]);
@@ -95,4 +99,11 @@ async function deleteById(id) {
   return nbDeletedElement;
 }
 
-module.exports = { getAll, getById, create, updateById, deleteById };
+module.exports = {
+  getAll,
+  getById,
+  getByEmailWithPassword,
+  create,
+  updateById,
+  deleteById,
+};

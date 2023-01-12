@@ -1,3 +1,5 @@
+const fs = require("fs");
+const { v4: uuidv4 } = require("uuid");
 const userModel = require("../models/user.model");
 
 async function list(req, res) {
@@ -10,7 +12,47 @@ async function get(req, res) {
   res.json(user);
 }
 
+async function getByEmailWithPasswordAndPassToNext(req, res, next) {
+  try {
+    if (!req.body?.email) {
+      res.status(400).json({
+        message: "Email can not be empty!",
+      });
+      return;
+    }
+    if (!req.body?.password) {
+      res.status(400).json({
+        message: "Password can not be empty!",
+      });
+      return;
+    }
+    const { email } = req.body;
+    const user = await userModel.getByEmailWithPassword(email);
+
+    if (user !== null) {
+      req.user = user;
+      next();
+    } else {
+      res.status(401).json({ message: "User not found" });
+    }
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+}
+
 async function create(req, res) {
+  const { originalname, filename } = req.file;
+  const newPhotoName = `${uuidv4()}-${originalname}`;
+
+  fs.rename(
+    `uploads/profilePicture/${filename}`,
+    `uploads/profilePicture/${newPhotoName}`,
+    (err) => {
+      if (err) {
+        throw err;
+      }
+    }
+  );
   try {
     if (!req.body) {
       res.status(400).json({
@@ -19,7 +61,7 @@ async function create(req, res) {
       return;
     }
 
-    const insertId = await userModel.create(req.body);
+    const insertId = await userModel.create(req.body, newPhotoName);
     res.status(201).json({ insertId });
   } catch (err) {
     res.status(401).json({ message: err.message });
@@ -50,4 +92,11 @@ async function remove(req, res) {
   res.status(200).json({ deletedElements });
 }
 
-module.exports = { list, get, create, update, remove };
+module.exports = {
+  list,
+  get,
+  getByEmailWithPasswordAndPassToNext,
+  create,
+  update,
+  remove,
+};
