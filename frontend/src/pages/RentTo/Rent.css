@@ -1,0 +1,17 @@
+.main-rent {
+  display: flex;
+  flex-direction: column;
+}
+
+.rent-form {
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 15px 40px;
+}
+
+.label-form {
+  display: flex;
+  flex-direction: column;
+}
