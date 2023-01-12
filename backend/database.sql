@@ -19,16 +19,18 @@ CREATE TABLE user (
   postal_code varchar(255) NOT NULL,
   rate int NOT NULL DEFAULT 5,
   photo varchar(255) NOT NULL,
-  id_card varchar(255) NOT NULL,
+  id_card varchar(255) NOT NULL DEFAULT 'id_card',
+  is_admin boolean NOT NULL DEFAULT false,
   PRIMARY KEY (id)
 );
 
-INSERT INTO user (first_name, last_name, email, hashed_password, phone_number, city, address, postal_code, rate, photo, id_card) 
+INSERT INTO user (first_name, last_name, email, hashed_password, phone_number, city, address, postal_code, photo, is_admin) 
   VALUES 
-    ("John1", "Doe1", "john.doe1@johndoe.com", "password1", "phone_number1", "paris", "1 rue de john doe", "75001", 5, "photo1", "id_card1"),
-    ('John2', 'Doe2', 'john.doe2@johndoe.com', 'password2', 'phone_number2', 'paris', '2 rue de john doe', '75001', 5, 'photo2', 'id_card2'),
-    ('John3', 'Doe3', 'john.doe3@johndoe.com', 'password3', 'phone_number3', 'paris', '3 rue de john doe', '75001', 5, 'photo3', 'id_card3'),
-    ('John4', 'Doe4', 'john.doe4@johndoe.com', 'password4', 'phone_number4', 'paris', '4 rue de john doe', '75001', 5, 'photo4', 'id_card4')
+    ("Michel", "Fenêtre", "michel@test.com", "$argon2id$v=19$m=65536,t=5,p=1$lbbK63cdNZ201i+/r7oZCQ$DRHi2fiVoX/2b77vXL8sKag/BKuIfLPuycUcrV1ELI4", "0600000000", "Paris", "1 rue de Michel Fenêtree", "75001", "3549543b-c363-4a68-95e4-d9807332ecbf-Cyril_capitalist_dystopia_dde48940-6cee-4e82-8355-778e0bcf9860.png", 0),
+    ('Jean', 'Porte', 'jean@test.com', '$argon2id$v=19$m=65536,t=5,p=1$Nqo42zqE+F3B9/oUFYKZ1g$5fYwpnYf0iToZaIBG68eIAZ8A9kTtV0fF28bWQbyOMA', '0600000000', 'Paris', '1 rue de Jean Porte', '75002', 'd6d86989-62c7-4156-9b08-5047db7e823c-Cyril_landscape_940d61e1-f107-44a6-bed2-c0a3f17e9d9e.png', 0),
+    ('John', 'Doe', 'john@test.com', '$argon2id$v=19$m=65536,t=5,p=1$8u2uhTgkA9x/YFPMGZmu8A$eTtb7okuufMlVSRRQbuwn0PD4BOM2IWj48R1/bNOhSA', '0600000000', 'Paris', '1 rue de John Doe', '75003', 'd7206de7-d47a-4c49-bd81-94eecd96605e-Cyril_music_band_5227e2ba-33d5-441e-be00-5f32e4f6ab23.png', 0),
+    ('Victor', 'Poignée', 'victor@test.com', '$argon2id$v=19$m=65536,t=5,p=1$tAr2XTLKMza26HoEPurPgQ$nBf5coo9rb5jUpaav+RgOmp1lFXsjcrjG++ge410mb4', '0600000000', 'Paris', '1 rue de Victor Poignée', '75004', '8df376b3-2475-4e41-9b80-be860af1cd6a-Cyril_realistic_8c0c7644-5f69-4c66-9221-52e8979ebde6.png', 0),
+    ("Cyril", "Leclercq", "cyril@sharemaride.com", "$argon2id$v=19$m=65536,t=5,p=1$l0GGrhX+VffSwyOh6BVh/g$xdzbOEFOn+t9hYt5xDxW/WqHD5zD2n2JQy4GzWS3pGA", "null", "null", "null", "null", "null", 1)
 ;
 
 CREATE TABLE vehicle (
@@ -74,19 +76,4 @@ INSERT INTO rent (user_id, vehicle_id, start_date, end_date)
     (1, 1, '2019-01-01', '2019-01-02'),
     (2, 2, '2019-01-01', '2019-01-02'),
     (3, 3, '2019-01-01', '2019-01-02')
-;
-
-CREATE TABLE admin (
-  id int NOT NULL AUTO_INCREMENT,
-  first_name varchar(255) NOT NULL,
-  last_name varchar(255) NOT NULL,
-  email varchar(255) NOT NULL,
-  password varchar(255) NOT NULL,
-  PRIMARY KEY (id)
-);
-
-INSERT INTO admin (first_name, last_name, email, password) 
-  VALUES 
-    ('Michel', 'Fenetre', 'michel.fenetre@sharemaride.com', 'password1'),
-    ('Jean', 'Porte', 'jean.porte@sharemaride.com', 'password2')
 ;
