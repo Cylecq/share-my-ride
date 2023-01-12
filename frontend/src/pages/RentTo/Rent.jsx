@@ -17,13 +17,19 @@ function Rent() {
             <input type="text" />
           </div>
           <div className="label-form">
-            <label htmlFor="start">
+            <label htmlFor="start" id="disponibility-label">
               <p>Disponibility :</p>
               Start
             </label>
             <input type="date" />
-            <label htmlFor="end">End</label>
+            <label htmlFor="end" id="end-label">
+              End
+            </label>
             <input type="date" />
+          </div>
+          <div className="label-form">
+            <label htmlFor="description">Cost per day</label>
+            <input type="number" />
           </div>
           <div className="label-form">
             <label htmlFor="photo">Picture</label>

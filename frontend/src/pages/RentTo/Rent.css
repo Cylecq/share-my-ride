@@ -10,12 +10,20 @@
   flex-direction: column;
   justify-content: space-between;
   margin: 0px 40px;
+  gap: 1.5rem;
 }
 
 .label-form {
   display: flex;
   flex-direction: column;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   color: var(--third-color);
-  font-weight: bold;
+}
+
+#disponibility-label > p {
+  font-weight: lighter;
+}
+
+#end-label {
+  margin-top: 7px;
 }
