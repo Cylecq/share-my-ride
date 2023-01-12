@@ -1,10 +1,13 @@
+import { Link } from "react-router-dom";
 import BurgerMenu from "./BurgerMenu";
+import "./NavBar.css";
 
 function NavBar() {
   return (
-    <div>
+    <nav className="nav-bar">
       <BurgerMenu />
-    </div>
+      <Link to="/">Log Out</Link>
+    </nav>
   );
 }
 
