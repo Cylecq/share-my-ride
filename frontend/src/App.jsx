@@ -2,7 +2,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Landing from "./pages/Landing";
 import SignUp from "./pages/SignUp";
 import LogIn from "./pages/LogIn";
-import UsersRides from "./pages/UsersRides";
+import UsersRides from "./pages/RentTo/UsersRides";
+import RidesRented from "./pages/Rent/RidesRented";
 import LookingFor from "./pages/Rent/LookingFor";
 import ChooseRide from "./pages/Rent/ChooseRide";
 import Rent from "./pages/RentTo/Rent";
@@ -20,9 +21,9 @@ function App() {
           <Route path="/look" element={<LookingFor />} />
           <Route path="/choose" element={<ChooseRide />} />
           <Route path="/rent" element={<Rent />} />
-          <Route path="/myrides" element={<UsersRides />} />
+          <Route path="/marides" element={<UsersRides />} />
+          <Route path="/ridesrented" element={<RidesRented />} />
           <Route path="/modify" element={<Modify />} />
-          <Route path="/myreservasion" element={<UsersRides />} />
         </Routes>
       </Router>
     </div>
