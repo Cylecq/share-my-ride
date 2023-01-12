@@ -1,4 +1,4 @@
-import React from "react";
+import Footer from "../../components/Footer";
 import "./SignupForm.css";
 
 function SignupForm() {
@@ -48,6 +48,7 @@ function SignupForm() {
           </button>
         </div>
       </form>
+      <Footer />
     </div>
   );
 }
