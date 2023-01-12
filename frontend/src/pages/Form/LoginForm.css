@@ -57,6 +57,7 @@ input:focus {
 .buttonbox {
   display: flex;
   justify-content: center;
+  margin-bottom: 100px;
 }
 
 #loginbutton {

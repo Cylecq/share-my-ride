@@ -5,6 +5,7 @@
 }
 
 .nav-bar > a {
+  margin-top: 2vh;
   color: var(--secondary-color);
   font-weight: 600;
   margin-right: 15px;
