@@ -1,11 +1,4 @@
-body {
-  display: flex;
-  justify-content: center;
-  background-color: var(--background-color);
-  margin-top: 2vh;
-}
-
-h1 {
+/* h1 {
   display: flex;
   justify-content: center;
   font-family: var(--font-title);
@@ -71,4 +64,4 @@ input:focus {
 #loginbutton {
   margin-top: 10vh;
   padding: 20px 35px 20px 35px;
-}
+} */

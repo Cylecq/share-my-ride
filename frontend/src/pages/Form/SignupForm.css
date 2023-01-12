@@ -1,11 +1,4 @@
-body {
-  display: flex;
-  justify-content: center;
-  background-color: var(--background-color);
-  margin-top: 2vh;
-}
-
-h1 {
+/* h1 {
   display: flex;
   justify-content: center;
   font-size: 4rem;
@@ -47,4 +40,4 @@ input::file-selector-button {
   padding-bottom: 7px;
   color: var(--primary-color);
   font-size: 0.9rem;
-}
+} */
