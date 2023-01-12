@@ -1,3 +1,5 @@
+const fs = require("fs");
+const { v4: uuidv4 } = require("uuid");
 const userModel = require("../models/user.model");
 
 async function list(req, res) {
@@ -39,6 +41,18 @@ async function getByEmailWithPasswordAndPassToNext(req, res, next) {
 }
 
 async function create(req, res) {
+  const { originalname, filename } = req.file;
+  const newPhotoName = `${uuidv4()}-${originalname}`;
+
+  fs.rename(
+    `uploads/profilePicture/${filename}`,
+    `uploads/profilePicture/${newPhotoName}`,
+    (err) => {
+      if (err) {
+        throw err;
+      }
+    }
+  );
   try {
     if (!req.body) {
       res.status(400).json({
@@ -47,7 +61,7 @@ async function create(req, res) {
       return;
     }
 
-    const insertId = await userModel.create(req.body);
+    const insertId = await userModel.create(req.body, newPhotoName);
     res.status(201).json({ insertId });
   } catch (err) {
     res.status(401).json({ message: err.message });

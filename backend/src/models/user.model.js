@@ -22,7 +22,7 @@ async function getByEmailWithPassword(email) {
   return rows[0];
 }
 
-async function create(user) {
+async function create(user, photo) {
   const {
     firstName,
     lastName,
@@ -32,10 +32,9 @@ async function create(user) {
     city,
     address,
     postalCode,
-    photo,
   } = user;
   const [result] = await db.query(
-    "INSERT INTO user (first_name, last_name, email, hashed_password, phone_number, city, address, postal_code, photo) VALUES (?, ?, ?, ?, ?, ?, ?, ? , ?)",
+    "INSERT INTO user (first_name, last_name, email, hashed_password, phone_number, city, address, postal_code, photo) VALUES (?, ?, ?, ?, ?, ?, ?, ? ,?)",
     [
       firstName,
       lastName,
