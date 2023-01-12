@@ -3,6 +3,27 @@
   src: url("./assets/typo/pimp-my-ride/Dolphins.woff") format("woff");
 }
 
+@font-face {
+  font-family: "typo-round";
+  src: url("./assets/typo/typo-round/Typo_Round_Regular_Demo.otf")
+    format("opentype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "typo-round";
+  src: url("./assets/typo/typo-round/Typo_Round_Light_Demo.otf")
+    format("opentype");
+  font-weight: lighter;
+}
+
+@font-face {
+  font-family: "typo-round";
+  src: url("./assets/typo/typo-round/Typo_Round_Bold_Demo.otf")
+    format("opentype");
+  font-weight: bold;
+}
+
 :root {
   --background-color: #4e807b;
   --background-card: #fcfcfc;
@@ -11,7 +32,7 @@
   --secondary-color: #ffc25c;
   --third-color: #fff6bd;
   --font-title: "dolphins";
-  --font-text: Arial, Helvetica, sans-serif;
+  --font-text: "typo-round";
   --border-radius: 20px;
 }
 
@@ -24,6 +45,34 @@ body {
   list-style: none;
   text-decoration: none;
   background-color: var(--background-color);
+  margin-top: 2vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+blockquote,
+p,
+pre,
+dl,
+dd,
+ol,
+ul,
+figure,
+hr,
+fieldset,
+legend {
+  margin: 0;
+  padding: 0;
+}
+
+button,
+a {
+  border: none;
+  cursor: pointer;
 }
 
 h1,

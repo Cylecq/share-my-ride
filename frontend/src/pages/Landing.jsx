@@ -7,7 +7,7 @@ function Landing() {
     <div className="landing-page">
       <nav className="nav-landing">
         <Link to="/signup">Sign Up</Link>
-        <Link to="/signup">Log In</Link>
+        <Link to="/login">Log In</Link>
       </nav>
       <div className="top-landing">
         <img src={logo} alt="logo" className="logo-landing" />
