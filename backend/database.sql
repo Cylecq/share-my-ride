@@ -12,7 +12,7 @@ CREATE TABLE user (
   first_name varchar(255) NOT NULL,
   last_name varchar(255) NOT NULL,
   email varchar(255) NOT NULL UNIQUE,
-  password varchar(255) NOT NULL,
+  hashed_password varchar(255) NOT NULL,
   phone_number varchar(255) NOT NULL,
   city varchar(255) NOT NULL,
   address varchar(255) NOT NULL,
@@ -23,7 +23,7 @@ CREATE TABLE user (
   PRIMARY KEY (id)
 );
 
-INSERT INTO user (first_name, last_name, email, password, phone_number, city, address, postal_code, rate, photo, id_card) 
+INSERT INTO user (first_name, last_name, email, hashed_password, phone_number, city, address, postal_code, rate, photo, id_card) 
   VALUES 
     ("John1", "Doe1", "john.doe1@johndoe.com", "password1", "phone_number1", "paris", "1 rue de john doe", "75001", 5, "photo1", "id_card1"),
     ('John2', 'Doe2', 'john.doe2@johndoe.com', 'password2', 'phone_number2', 'paris', '2 rue de john doe', '75001', 5, 'photo2', 'id_card2'),
@@ -39,60 +39,41 @@ CREATE TABLE vehicle (
   description varchar(255) NOT NULL,
   price int NOT NULL,
   photo varchar(255) NOT NULL,
+  is_available boolean NOT NULL DEFAULT true,
   PRIMARY KEY (id),
   CONSTRAINT fk_owner_id
     FOREIGN KEY (owner_id)
     REFERENCES user(id)
 );
 
-INSERT INTO vehicle (owner_id, type, name, description, price, photo) 
+INSERT INTO vehicle (owner_id, type, name, description, price, photo, is_available) 
   VALUES 
-    (1, 'bike', 'bike1', 'description1', 10, 'photo1'),
-    (2, 'bike', 'bike2', 'description2', 20, 'photo2'),
-    (3, 'bike', 'bike3', 'description3', 30, 'photo3'),
-    (4, 'bike', 'bike4', 'description4', 40, 'photo4')
+    (1, 'bike', 'bike1', 'description1', 10, 'photo1', 1),
+    (2, 'bike', 'bike2', 'description2', 20, 'photo2', 1),
+    (3, 'bike', 'bike3', 'description3', 30, 'photo3', 0),
+    (4, 'bike', 'bike4', 'description4', 40, 'photo4', 0)
 ;
 
-CREATE TABLE post (
-  user_id int NOT NULL,
-  vehicle_id int NOT NULL,
-  PRIMARY KEY (user_id, vehicle_id),
-  CONSTRAINT fk_user_id_post
-    FOREIGN KEY (user_id)
-    REFERENCES user(id),
-  CONSTRAINT fk_vehicle_id_post
-    FOREIGN KEY (vehicle_id)
-    REFERENCES vehicle(id)
-);
-
-INSERT INTO post (user_id, vehicle_id) 
-  VALUES 
-    (1, 1),
-    (2, 2),
-    (3, 3),
-    (4, 4)
-;
-
-CREATE TABLE rented_vehicle (
+CREATE TABLE rent (
+  id int NOT NULL AUTO_INCREMENT,
   user_id int NOT NULL,
   vehicle_id int NOT NULL,
   start_date date NOT NULL,
   end_date date NOT NULL,
-  PRIMARY KEY (user_id, vehicle_id),
-  CONSTRAINT fk_user_id_rented_vehicle
+  PRIMARY KEY (id),
+  CONSTRAINT fk_user_id
     FOREIGN KEY (user_id)
     REFERENCES user(id),
-  CONSTRAINT fk_vehicle_id_rented_vehicle
+  CONSTRAINT fk_vehicle_id
     FOREIGN KEY (vehicle_id)
     REFERENCES vehicle(id)
 );
 
-INSERT INTO rented_vehicle (user_id, vehicle_id, start_date, end_date) 
+INSERT INTO rent (user_id, vehicle_id, start_date, end_date) 
   VALUES 
     (1, 1, '2019-01-01', '2019-01-02'),
     (2, 2, '2019-01-01', '2019-01-02'),
-    (3, 3, '2019-01-01', '2019-01-02'),
-    (4, 4, '2019-01-01', '2019-01-02')
+    (3, 3, '2019-01-01', '2019-01-02')
 ;
 
 CREATE TABLE admin (

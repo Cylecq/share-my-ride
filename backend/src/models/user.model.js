@@ -17,7 +17,7 @@ async function create(user) {
     firstName,
     lastName,
     email,
-    password,
+    hashedPassword,
     phoneNumber,
     city,
     address,
@@ -26,12 +26,12 @@ async function create(user) {
     idCard,
   } = user;
   const [result] = await db.query(
-    "INSERT INTO user (first_name, last_name, email, password, phone_number, city, address, postal_code, photo, id_card) VALUES (?, ?, ?, ?, ?, ?, ?, ? , ?, ?)",
+    "INSERT INTO user (first_name, last_name, email, hashed_password, phone_number, city, address, postal_code, photo, id_card) VALUES (?, ?, ?, ?, ?, ?, ?, ? , ?, ?)",
     [
       firstName,
       lastName,
       email,
-      password,
+      hashedPassword,
       phoneNumber,
       city,
       address,
@@ -49,7 +49,7 @@ async function updateById(id, user) {
     firstName,
     lastName,
     email,
-    password,
+    hashedPassword,
     phoneNumber,
     city,
     address,
@@ -58,12 +58,12 @@ async function updateById(id, user) {
     idCard,
   } = user;
   const [result] = await db.query(
-    "UPDATE user SET first_name = ?, last_name = ?, email = ?, password = ?, phone_number = ?, city = ?, address = ?, postal_code = ?, photo = ?, id_card = ? WHERE id = ?",
+    "UPDATE user SET first_name = ?, last_name = ?, email = ?, hashed_password = ?, phone_number = ?, city = ?, address = ?, postal_code = ?, photo = ?, id_card = ? WHERE id = ?",
     [
       firstName,
       lastName,
       email,
-      password,
+      hashedPassword,
       phoneNumber,
       city,
       address,
@@ -78,8 +78,7 @@ async function updateById(id, user) {
 }
 
 async function deleteById(id) {
-  const [res3] = await db.query("DELETE FROM post WHERE user_id = ?", [id]);
-  const [res4] = await db.query(
+  const [res3] = await db.query(
     "DELETE FROM rented_vehicle WHERE user_id = ?",
     [id]
   );
@@ -91,7 +90,6 @@ async function deleteById(id) {
     res1.affectedRows,
     res2.affectedRows,
     res3.affectedRows,
-    res4.affectedRows,
   ].reduce((acc, cur) => acc + cur);
 
   return nbDeletedElement;
