@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import useFetch from "../../services/useFetch";
 import NavBar from "../../components/NavBar";
 import Footer from "../../components/Footer";
@@ -19,16 +18,14 @@ function UsersRides() {
         <div className="list">
           {vehicles &&
             vehicles.map((vehicle) => (
-              <Link to="/modify">
-                <RidesCard
-                  key={vehicle.id}
-                  id={vehicle.id}
-                  name={vehicle.name}
-                  type={vehicle.type}
-                  price={vehicle.price}
-                  photo={vehicle.photo}
-                />
-              </Link>
+              <RidesCard
+                key={vehicle.id}
+                id={vehicle.id}
+                name={vehicle.name}
+                type={vehicle.type}
+                price={vehicle.price}
+                photo={vehicle.photo}
+              />
             ))}
         </div>
       </div>
