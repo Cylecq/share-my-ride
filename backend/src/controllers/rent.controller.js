@@ -1,7 +1,8 @@
 const rentModel = require("../models/rent.model");
 
 async function list(req, res) {
-  const rents = await rentModel.getAll();
+  const { userId } = req.query;
+  const rents = await rentModel.getAll(userId);
   res.json(rents);
 }
 
