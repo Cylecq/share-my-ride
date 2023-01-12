@@ -11,18 +11,12 @@ h1 {
   display: flex;
   flex-direction: column;
   font-size: 1.5rem;
-  align-items: center;
+  margin: 0 45px;
   color: var(--third-color);
 }
 
-label {
+.signupform > label {
   margin-top: 1.5rem;
-  display: flex;
-  flex-direction: column;
-}
-
-label > p {
-  font-weight: lighter;
 }
 
 #signupbutton {

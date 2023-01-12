@@ -8,11 +8,10 @@ h1 {
 }
 
 .loginform {
-  margin-top: 4vh;
+  margin: 90px 45px 0;
   display: flex;
   flex-direction: column;
   font-size: 1.5rem;
-  align-items: center;
   color: var(--third-color);
   font-family: var(--font-text);
   font-weight: bold;
@@ -20,7 +19,6 @@ h1 {
 }
 
 label {
-  margin-top: 6rem;
   display: flex;
   flex-direction: column;
   font-family: var(--font-text);
@@ -30,7 +28,6 @@ label {
 input {
   margin-top: 0.3rem;
   height: 2rem;
-  width: 60vw;
   border-radius: var(--border-radius);
   background-color: white;
   border: solid 2px var(--secondary-color);
@@ -63,6 +60,5 @@ input:focus {
 }
 
 #loginbutton {
-  margin-top: 10vh;
   padding: 20px 35px 20px 35px;
 }
