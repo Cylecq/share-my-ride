@@ -14,7 +14,7 @@ function MyReservations() {
   return (
     <div className="myreservation-page">
       <NavBar />
-      <h1>All my reservations</h1>
+      <h1 className="title-page">All my reservations</h1>
       {loadingRents && <h1>Loading...</h1>}
       <div className="list">
         {rents &&
