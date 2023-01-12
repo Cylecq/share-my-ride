@@ -18,7 +18,7 @@ CREATE TABLE user (
   address varchar(255) NOT NULL,
   postal_code varchar(255) NOT NULL,
   rate int NOT NULL DEFAULT 5,
-  photo varchar(255) NOT NULL,
+  photo varchar(255) NOT NULL DEFAULT 'photo',
   id_card varchar(255) NOT NULL DEFAULT 'id_card',
   is_admin boolean NOT NULL DEFAULT false,
   PRIMARY KEY (id)
