@@ -1,5 +1,7 @@
+import "./BurgerMenu.css";
+
 function BurgerMenu() {
-  return <div>BurgerMenu</div>;
+  return <div className="burgerMenu">b</div>;
 }
 
 export default BurgerMenu;
