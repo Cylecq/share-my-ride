@@ -1,13 +1,19 @@
 import { useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import useFetchLazy from "../../services/useFetchLazy";
 import Footer from "../../components/Footer";
 import "./LoginForm.css";
 
 function LoginForm() {
+  const navigate = useNavigate();
   const mailRef = useRef();
   const passwordRef = useRef();
 
-  const { trigger, data: currentUser } = useFetchLazy({
+  const {
+    trigger,
+    data: currentUser,
+    error,
+  } = useFetchLazy({
     method: "post",
     path: "/users/login",
   });
@@ -23,6 +29,7 @@ function LoginForm() {
   useEffect(() => {
     if (currentUser) {
       localStorage.setItem("currentUser", JSON.stringify(currentUser));
+      navigate("/look");
     }
   }, [currentUser]);
 
@@ -45,6 +52,12 @@ function LoginForm() {
               Submit
             </button>
           </div>
+          {error?.response.status === 400 && (
+            <p className="error-message">Fill the form</p>
+          )}
+          {error?.response.status === 401 && (
+            <p className="error-message">Wrong login</p>
+          )}
         </form>
       </div>
 

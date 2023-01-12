@@ -63,3 +63,8 @@ input:focus {
 #loginbutton {
   padding: 20px 35px 20px 35px;
 }
+
+.error-message {
+  text-align: center;
+  color: rgb(169, 0, 0);
+}
