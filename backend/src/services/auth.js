@@ -1,4 +1,5 @@
 const argon2 = require("argon2");
+const jwt = require("jsonwebtoken");
 
 const hashingOptions = {
   type: argon2.argon2id,
@@ -30,7 +31,12 @@ const verifyPassword = async (req, res) => {
 
   try {
     if (await argon2.verify(hashedPassword, password)) {
-      res.status(200).json({ message: "Login successful" });
+      const payload = { sub: req.user.id };
+      const token = jwt.sign(payload, process.env.JWT_SECRET, {
+        expiresIn: "1h",
+      });
+      delete req.user.hashed_password;
+      res.status(200).json({ user: req.user, token });
     } else {
       res.status(401).json({ message: "Login failed" });
     }
@@ -39,4 +45,21 @@ const verifyPassword = async (req, res) => {
   }
 };
 
-module.exports = { hashPassword, verifyPassword };
+const verifyToken = (req, res, next) => {
+  try {
+    const authorizationHeader = req.get("Authorization");
+    if (!authorizationHeader) {
+      throw new Error("No authorization header");
+    }
+    const [type, token] = authorizationHeader.split(" ");
+    if (type !== "Bearer") {
+      throw new Error("Invalid authorization type");
+    }
+    req.payload = jwt.verify(token, process.env.JWT_SECRET);
+    next();
+  } catch {
+    res.status(401).json({ message: "Unauthorized" });
+  }
+};
+
+module.exports = { hashPassword, verifyPassword, verifyToken };
