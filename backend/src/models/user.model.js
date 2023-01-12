@@ -85,10 +85,7 @@ async function updateById(id, user) {
 }
 
 async function deleteById(id) {
-  const [res3] = await db.query(
-    "DELETE FROM rented_vehicle WHERE user_id = ?",
-    [id]
-  );
+  const [res3] = await db.query("DELETE FROM rent WHERE user_id = ?", [id]);
   const [res2] = await db.query("DELETE FROM vehicle WHERE owner_id = ?", [id]);
 
   const [res1] = await db.query("DELETE FROM user WHERE id = ?", [id]);
