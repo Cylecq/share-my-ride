@@ -18,7 +18,7 @@ CREATE TABLE user (
   address varchar(255) NOT NULL,
   postal_code varchar(255) NOT NULL,
   rate int NOT NULL DEFAULT 5,
-  photo varchar(255) NOT NULL,
+  photo varchar(255) NOT NULL DEFAULT 'photo',
   id_card varchar(255) NOT NULL DEFAULT 'id_card',
   is_admin boolean NOT NULL DEFAULT false,
   PRIMARY KEY (id)
@@ -84,7 +84,10 @@ CREATE TABLE rent (
 
 INSERT INTO rent (user_id, vehicle_id, start_date, end_date) 
   VALUES 
-    (1, 1, '2019-01-01', '2019-01-02'),
+    (1, 5, '2019-01-01', '2019-01-02'),
+    (1, 2, '2019-01-03', '2019-01-04'),
+    (1, 3, '2019-01-05', '2019-01-06'),
+    (1, 4, '2019-01-07', '2019-01-08'),
     (2, 2, '2019-01-01', '2019-01-02'),
     (3, 3, '2019-01-01', '2019-01-02')
 ;
