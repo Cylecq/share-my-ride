@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import NavBar from "../../components/NavBar";
+import Footer from "../../components/Footer";
 import "./LookingFor.css";
 
 function LookingFor() {
@@ -10,22 +11,22 @@ function LookingFor() {
         <h1 className="title-page">What are ya looking for ?</h1>
         <Link to="/choose/bike" className="link-button-look">
           <button type="button" className="button-look">
-            A bike ma man
+            A bike
           </button>
         </Link>
         <Link to="/choose/trot" className="link-button-look">
           <button type="button" className="button-look">
-            A trot' ma man
+            A trot'
           </button>
         </Link>
         <Link to="/choose/skate" className="link-button-look">
           <button type="button" className="button-look">
-            A skate ma man
+            A skate
           </button>
         </Link>
         <Link to="/choose/roller" className="link-button-look">
           <button type="button" className="button-look">
-            Some rollers ma man
+            Some rollers
           </button>
         </Link>
         <Link to="/choose/other" className="link-button-look">
@@ -34,6 +35,7 @@ function LookingFor() {
           </button>
         </Link>
       </div>
+      <Footer />
     </div>
   );
 }

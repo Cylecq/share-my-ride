@@ -1,6 +1,6 @@
 import useFetch from "../../services/useFetch";
 import NavBar from "../../components/NavBar";
-// import Footer from "../../components/Footer";
+import Footer from "../../components/Footer";
 import RidesCard from "../components/RidesCard";
 import "./UsersRides.css";
 
@@ -29,7 +29,7 @@ function UsersRides() {
             ))}
         </div>
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }
