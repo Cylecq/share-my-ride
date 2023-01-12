@@ -45,7 +45,7 @@ function LoginForm() {
 
           <label htmlFor="password">
             Ma password
-            <input type="text" name="password" ref={passwordRef} />
+            <input type="password" name="password" ref={passwordRef} />
           </label>
           <div className="buttonbox">
             <button type="submit" className="buttons" id="loginbutton">
