@@ -1,3 +1,7 @@
+.rent-page {
+  height: 115vh;
+}
+
 .main-rent {
   display: flex;
   flex-direction: column;
