@@ -9,6 +9,7 @@ import Modify from "./pages/RentTo/Modify";
 import "./App.css";
 import LoginForm from "./pages/Form/LoginForm";
 import SignupForm from "./pages/Form/SignupForm";
+import MakeAReservation from "./pages/Rent/MakeAReservation";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/marides" element={<UsersRides />} />
           <Route path="/myreservations" element={<MyReservations />} />
           <Route path="/modify" element={<Modify />} />
+          <Route path="/makeAReservation" element={<MakeAReservation />} />
         </Routes>
       </Router>
     </div>
