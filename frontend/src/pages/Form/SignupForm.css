@@ -1,4 +1,4 @@
-/* h1 {
+h1 {
   display: flex;
   justify-content: center;
   font-size: 4rem;
@@ -21,6 +21,10 @@ label {
   flex-direction: column;
 }
 
+label > p {
+  font-weight: lighter;
+}
+
 #signupbutton {
   margin-top: 4vh;
   padding: 20px 35px 20px 35px;
@@ -29,15 +33,15 @@ label {
 input::file-selector-button {
   background-color: white;
   border: none;
-  color: var(--primary-color);
+  color: var(--background-color);
   font-size: 1rem;
 }
 
-#fileinput {
+.fileinput {
   text-align: center;
   height: 100%;
   padding-top: 7px;
   padding-bottom: 7px;
-  color: var(--primary-color);
+  color: var(--background-color);
   font-size: 0.9rem;
-} */
+}

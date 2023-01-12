@@ -32,7 +32,7 @@
   --secondary-color: #ffc25c;
   --third-color: #fff6bd;
   --font-title: "dolphins";
-  --font-text: "robaga-round";
+  --font-text: "robaga-rounded";
   --border-radius: 20px;
 }
 
@@ -73,7 +73,7 @@ a {
 .title-page {
   font-family: var(--font-title);
   font-size: 45px;
-  color: var(--background-card);
+  color: var(--third-color);
   margin: 0 auto;
   width: 260px;
   margin: 20px auto 20px;
