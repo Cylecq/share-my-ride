@@ -9,22 +9,29 @@
   justify-content: space-between;
 }
 
-.button-look {
+.link-button-look {
   margin: 15px 40px;
   height: 60px;
   border-radius: var(--border-radius);
   background-color: var(--secondary-color);
-  font-size: 20px;
   border: solid 2px var(--primary-color);
   border-bottom: solid 10px var(--primary-color);
   border-right: solid 10px var(--primary-color);
-  color: var(--background-card);
-  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.button-look:active {
+.link-button-look:active {
   background-color: var(--primary-color);
   border: solid 2px var(--secondary-color);
   border-bottom: solid 10px var(--secondary-color);
   border-right: solid 10px var(--secondary-color);
+}
+
+.button-look {
+  background-color: var(--secondary-color);
+  color: var(--background-card);
+  font-size: 20px;
+  font-weight: 600;
 }
