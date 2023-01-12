@@ -16,12 +16,12 @@ function LoginForm() {
           Ma password
           <input type="text" name="password" />
         </label>
+        <div className="buttonbox">
+          <button type="button" className="buttons" id="loginbutton">
+            Submit
+          </button>
+        </div>
       </form>
-      <div className="buttonbox">
-        <button type="button" className="buttons" id="loginbutton">
-          Submit
-        </button>
-      </div>
     </div>
   );
 }
