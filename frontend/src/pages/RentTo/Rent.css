@@ -1,6 +1,7 @@
 .main-rent {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .rent-form {
@@ -8,10 +9,13 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin: 15px 40px;
+  margin: 0px 40px;
 }
 
 .label-form {
   display: flex;
   flex-direction: column;
+  font-size: 1.5rem;
+  color: var(--third-color);
+  font-weight: bold;
 }

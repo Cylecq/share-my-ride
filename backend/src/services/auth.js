@@ -31,7 +31,7 @@ const verifyPassword = async (req, res) => {
 
   try {
     if (await argon2.verify(hashedPassword, password)) {
-      const payload = { sub: req.user.id };
+      const payload = { sub: req.user.id, role: req.user.is_admin };
       const token = jwt.sign(payload, process.env.JWT_SECRET, {
         expiresIn: "1h",
       });
@@ -56,10 +56,19 @@ const verifyToken = (req, res, next) => {
       throw new Error("Invalid authorization type");
     }
     req.payload = jwt.verify(token, process.env.JWT_SECRET);
+
     next();
   } catch {
     res.status(401).json({ message: "Unauthorized" });
   }
 };
 
-module.exports = { hashPassword, verifyPassword, verifyToken };
+const verifyAdmin = (req, res, next) => {
+  if (req.payload.role === 1) {
+    next();
+  } else {
+    res.status(403).json({ message: "Forbidden" });
+  }
+};
+
+module.exports = { hashPassword, verifyPassword, verifyToken, verifyAdmin };

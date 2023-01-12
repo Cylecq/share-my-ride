@@ -41,15 +41,14 @@ function SignupForm() {
         </label>
         <label className="picture" htmlFor="fileinput">
           Ma picture
-          <input type="file" name="picture" id="fileinput" />
+          <input type="file" name="picture" className="fileinput" />
         </label>
+        <div className="buttonbox">
+          <button type="button" className="buttons" id="signupbutton">
+            Submit
+          </button>
+        </div>
       </form>
-
-      <div className="buttonbox">
-        <button type="button" className="buttons" id="signupbutton">
-          Submit
-        </button>
-      </div>
     </div>
   );
 }
