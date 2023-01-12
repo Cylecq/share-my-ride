@@ -5,7 +5,7 @@ import MyReservations from "./pages/Rent/MyReservations";
 import LookingFor from "./pages/Rent/LookingFor";
 import ChooseRide from "./pages/Rent/ChooseRide";
 import Rent from "./pages/RentTo/Rent";
-import Modify from "./pages/RentTo/Modify";
+import WannaModify from "./pages/RentTo/WannaModify";
 import "./App.css";
 import LoginForm from "./pages/Form/LoginForm";
 import SignupForm from "./pages/Form/SignupForm";
@@ -23,7 +23,7 @@ function App() {
           <Route path="/rent" element={<Rent />} />
           <Route path="/marides" element={<UsersRides />} />
           <Route path="/myreservations" element={<MyReservations />} />
-          <Route path="/modify" element={<Modify />} />
+          <Route path="/modify" element={<WannaModify />} />
         </Routes>
       </Router>
     </div>
