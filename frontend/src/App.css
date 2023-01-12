@@ -6,8 +6,6 @@
 @font-face {
   font-family: "robaga-rounded";
   src: url("./assets/typo/robaga-rounded/Robaga_Rounded_Regular.otf")
-  font-family: "robaga-rounded";
-  src: url("./assets/typo/robaga-rounded/Robaga_Rounded_Regular.otf")
     format("opentype");
   font-weight: normal;
 }
@@ -15,15 +13,11 @@
 @font-face {
   font-family: "robaga-rounded";
   src: url("./assets/typo/robaga-rounded/Robaga_Rounded_Light.otf")
-  font-family: "robaga-rounded";
-  src: url("./assets/typo/robaga-rounded/Robaga_Rounded_Light.otf")
     format("opentype");
   font-weight: lighter;
 }
 
 @font-face {
-  font-family: "robaga-rounded";
-  src: url("./assets/typo/robaga-rounded/Robaga_Rounded_Bold.otf")
   font-family: "robaga-rounded";
   src: url("./assets/typo/robaga-rounded/Robaga_Rounded_Bold.otf")
     format("opentype");
