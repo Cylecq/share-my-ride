@@ -18,7 +18,9 @@ function Landing() {
           <Link to="/rent"> Rent ma Ride</Link>
         </button>
       </div>
-      <h3 className="title-page">A little about ourself...</h3>
+      <h3 className="title-page" id="title-bottomlanding">
+        A little about ourself...
+      </h3>
       <div className="bottom-landing">
         <p>
           With Share Ma RideTM, you can rent a ride to another person for a day,
