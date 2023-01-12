@@ -7,7 +7,7 @@ function Landing() {
     <div className="landing-page">
       <nav className="nav-landing">
         <Link to="/signup">Sign Up</Link>
-        <Link to="/signup">Log In</Link>
+        <Link to="/login">Log In</Link>
       </nav>
       <div className="top-landing">
         <img src={logo} alt="logo" className="logo-landing" />
@@ -18,7 +18,7 @@ function Landing() {
           <Link to="/rent"> Rent ma Ride</Link>
         </button>
       </div>
-      <h3>A little about ourself...</h3>
+      <h3 className="title-page">A little about ourself...</h3>
       <div className="bottom-landing">
         <p>
           With Share Ma RideTM, you can rent a ride to another person for a day,

@@ -40,7 +40,7 @@ function BurgerMenu() {
             <Link to="/marides">Check ma rides</Link>
           </div>
           <div className="link">
-            <Link to="/ridesrented">Ma reservasion</Link>
+            <Link to="/ridesrented">Ma reservasions</Link>
           </div>
         </div>
       </button>
