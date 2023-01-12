@@ -8,7 +8,7 @@ const hashingOptions = {
   parallelism: 1,
 };
 
-const hashPassword = (req, res, next) => {
+const hashPassword = async (req, res, next) => {
   if (!req.body.password) {
     res.status(400).json({ message: "Password is required" });
     next();

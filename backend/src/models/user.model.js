@@ -33,10 +33,9 @@ async function create(user) {
     address,
     postalCode,
     photo,
-    idCard,
   } = user;
   const [result] = await db.query(
-    "INSERT INTO user (first_name, last_name, email, hashed_password, phone_number, city, address, postal_code, photo, id_card) VALUES (?, ?, ?, ?, ?, ?, ?, ? , ?, ?)",
+    "INSERT INTO user (first_name, last_name, email, hashed_password, phone_number, city, address, postal_code, photo) VALUES (?, ?, ?, ?, ?, ?, ?, ? , ?)",
     [
       firstName,
       lastName,
@@ -47,7 +46,6 @@ async function create(user) {
       address,
       postalCode,
       photo,
-      idCard,
     ]
   );
 
