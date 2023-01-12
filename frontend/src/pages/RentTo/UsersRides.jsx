@@ -21,6 +21,7 @@ function UsersRides() {
                 key={vehicle.id}
                 id={vehicle.id}
                 name={vehicle.name}
+                type={vehicle.type}
                 price={vehicle.price}
                 photo={vehicle.photo}
               />

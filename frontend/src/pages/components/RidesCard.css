@@ -25,9 +25,6 @@
   border-radius: var(--border-radius);
 }
 
-.card-title {
-  margin: 10px;
-}
-
-.card-price {
+.card-image > div {
+  margin: 2px;
 }
