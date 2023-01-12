@@ -6,7 +6,7 @@
 .nav-landing {
   display: flex;
   justify-content: flex-end;
-  margin-right: 80px;
+  font-family: var(--font-text);
 }
 
 .nav-landing > a {

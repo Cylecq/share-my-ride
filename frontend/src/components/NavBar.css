@@ -5,6 +5,8 @@
 }
 
 .nav-bar > a {
+  font-family: var(--font-text);
   color: var(--background-card);
   font-weight: 600;
+  margin-right: 15px;
 }
