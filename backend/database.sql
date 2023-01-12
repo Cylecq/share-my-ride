@@ -50,10 +50,21 @@ CREATE TABLE vehicle (
 
 INSERT INTO vehicle (owner_id, type, name, description, price, photo, is_available) 
   VALUES 
-    (1, 'bike', 'bike1', 'description1', 10, 'photo1', 1),
-    (2, 'bike', 'bike2', 'description2', 20, 'photo2', 1),
-    (3, 'bike', 'bike3', 'description3', 30, 'photo3', 0),
-    (4, 'bike', 'bike4', 'description4', 40, 'photo4', 0)
+    (1, 'bike', 'Mountain Bike', 'The best bike if yoou want to do a mountain trip', 10, '6c7c0e83-6bcb-4adc-83bb-08550f811eb2-bike.jpeg', 1),
+    (2, 'bike', 'City Bike', 'A trip in Paris ? Rent my bike to discover the the most beautiful city in the world !', 18, 'dca56ca9-8678-40c0-9ded-b0ffb8d04415-bike2.jpeg', 0),
+    (3, 'bike', 'Vintage Bike', 'Show off in the city with this great vintage bike', 15, 'b070e79f-145f-4024-b009-9358d600eb5a-bike3.jpeg', 1),
+    (4, 'roller', 'Vintage Rollers', 'Show off in the city with this great vintage rollers', 15, '98eb2c80-d13d-4187-8488-25eb367eaa02-rollers.png', 1),
+    (1, 'roller', 'Disco Rollers', 'Shine on the dancefloor with these sparkling rollerblades', 17, '844a152f-dc0c-46ed-b42e-c9caaffbf8da-rollers2.jpg', 0),
+    (2, 'roller', 'Child Rollers', 'Let your children discover rollerblading', 11, '9d892536-b361-401b-b566-0ebeb9672896-rollers3.jpg', 1),
+    (3, 'skate', 'Skate from Hell', 'Satan gave it to me', 11, 'acdca399-b7a3-44ac-ad4d-4b48985a1a6c-skate.jpg', 0),
+    (4, 'skate', 'Nice Cruiser', 'Discover the city with a skateboard !', 9, '62f61ca9-d1eb-4989-9603-ea6bfa0a476d-skate2.jpg', 1),
+    (1, 'skate', 'Skateboard', 'A classic skateboard if you want to spend a day in a skatepark', 10, '7d7776a1-6c1a-4e6d-8aef-b868c06b29ff-skate3.jpeg', 1),
+    (2, 'trot', 'Vintage scooter', 'Show off in the city with this great vintage scooter', 16, '01703ddc-0761-4ab2-b444-f9c2a5e703b5-trot.jpg', 1),
+    (3, 'trot', 'Freestyle scooter', 'A freestyle scooter if you want to spend a day in a skatepark', 12, 'a239ea76-adc4-4626-a209-ac4886754522-trot2.jpg', 1),
+    (4, 'trot', 'Child scooter', 'Let your children discover scooter', 10, '5fb3f387-8a51-4ddc-bb68-b7ec9072dfe3-trot3.jpg', 0),
+    (1, 'other', 'Rolling chair', "For life's unexpected events", 35, 'aef69ade-62ff-45df-8463-8937142bf05a-chaiseroulante.jpg', 1),
+    (2, 'other', 'Monowheel', "Discover my DIY monowheel !", 30, 'f5724a88-919f-43bf-98e0-14330a87fad6-monowheel.jpg', 1),
+    (3, 'other', 'Monowheel', "Flex in the city like Gwenzouz", 25, '1be2c315-767c-4220-adca-c19e3b2c9a89-monowheelGwen.jpg', 1)
 ;
 
 CREATE TABLE rent (

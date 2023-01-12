@@ -25,8 +25,8 @@ async function getOne(id) {
   return rows[0];
 }
 
-async function create(vehicle) {
-  const { ownerId, type, name, description, price, photo } = vehicle;
+async function create(vehicle, photo) {
+  const { ownerId, type, name, description, price } = vehicle;
   const [result] = await db.query(
     "INSERT INTO vehicle (owner_id, type, name, description, price, photo) VALUES (?, ?, ?, ?, ?, ?) ",
     [ownerId, type, name, description, price, photo]
