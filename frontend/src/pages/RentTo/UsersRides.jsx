@@ -5,8 +5,10 @@ import RidesCard from "../components/RidesCard";
 import "./UsersRides.css";
 
 function UsersRides() {
+  const { user } = JSON.parse(localStorage.getItem("currentUser"));
+
   const { data: vehicles, loading } = useFetch({
-    path: "/vehicles?ownerId=1",
+    path: `/vehicles?ownerId=${user.id}`,
     method: "get",
   });
   return (

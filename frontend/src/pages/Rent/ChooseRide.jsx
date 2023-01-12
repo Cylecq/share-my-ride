@@ -1,8 +1,7 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import useFetch from "../../services/useFetch";
 import NavBar from "../../components/NavBar";
 import RidesCard from "../components/RidesCard";
-
 import "./ChooseRide.css";
 
 function ChooseRide() {
@@ -16,7 +15,6 @@ function ChooseRide() {
     method: "get",
     path: `/vehicles?type=${type}`,
   });
-
   return (
     <div className="chooseRide">
       <NavBar />
@@ -26,12 +24,14 @@ function ChooseRide() {
       <div className="list">
         {vehicles &&
           vehicles.map((vehicle) => (
-            <RidesCard
-              key={vehicle.id}
-              name={vehicle.name}
-              photo={vehicle.photo}
-              price={vehicle.bike}
-            />
+            <Link to="/makeAReservation">
+              <RidesCard
+                key={vehicle.id}
+                name={vehicle.name}
+                photo={vehicle.photo}
+                price={vehicle.bike}
+              />
+            </Link>
           ))}
       </div>
     </div>
