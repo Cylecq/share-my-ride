@@ -4,7 +4,7 @@
 }
 
 :root {
-  --background-color: #40807a;
+  --background-color: #4e807b;
   --background-card: #fcfcfc;
   --color-text: rgb(20, 20, 20);
   --primary-color: #ff7c68;
@@ -12,15 +12,43 @@
   --third-color: #fff6bd;
   --font-title: "dolphins";
   --font-text: Arial, Helvetica, sans-serif;
-  --border-radius: 10px;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  --border-radius: 20px;
 }
 
 body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overscroll-behavior: none;
+  font-family: var(--font-text);
+  list-style: none;
+  text-decoration: none;
   background-color: var(--background-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+blockquote,
+p,
+pre,
+dl,
+dd,
+ol,
+ul,
+figure,
+hr,
+fieldset,
+legend {
+  margin: 0;
+  padding: 0;
+}
+
+button,
+a {
+  border: none;
+  cursor: pointer;
 }
