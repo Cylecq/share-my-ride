@@ -10,6 +10,34 @@ async function get(req, res) {
   res.json(user);
 }
 
+async function getByEmailWithPasswordAndPassToNext(req, res, next) {
+  try {
+    if (!req.body?.email) {
+      res.status(400).json({
+        message: "Email can not be empty!",
+      });
+      return;
+    }
+    if (!req.body?.password) {
+      res.status(400).json({
+        message: "Password can not be empty!",
+      });
+      return;
+    }
+    const { email } = req.body;
+    const user = await userModel.getByEmailWithPassword(email);
+
+    if (user !== null) {
+      req.user = user;
+      next();
+    } else {
+      res.status(401).json({ message: "User not found" });
+    }
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+}
+
 async function create(req, res) {
   try {
     if (!req.body) {
@@ -50,4 +78,11 @@ async function remove(req, res) {
   res.status(200).json({ deletedElements });
 }
 
-module.exports = { list, get, create, update, remove };
+module.exports = {
+  list,
+  get,
+  getByEmailWithPasswordAndPassToNext,
+  create,
+  update,
+  remove,
+};

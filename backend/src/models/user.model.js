@@ -12,12 +12,22 @@ async function getById(id) {
   return rows[0];
 }
 
+async function getByEmailWithPassword(email) {
+  const [rows] = await db.query("SELECT * FROM user WHERE email = ?", [email]);
+
+  if (rows.length === 0) {
+    return null;
+  }
+
+  return rows[0];
+}
+
 async function create(user) {
   const {
     firstName,
     lastName,
     email,
-    hashedPassword,
+    password,
     phoneNumber,
     city,
     address,
@@ -31,7 +41,7 @@ async function create(user) {
       firstName,
       lastName,
       email,
-      hashedPassword,
+      password,
       phoneNumber,
       city,
       address,
@@ -49,7 +59,7 @@ async function updateById(id, user) {
     firstName,
     lastName,
     email,
-    hashedPassword,
+    password,
     phoneNumber,
     city,
     address,
@@ -63,7 +73,7 @@ async function updateById(id, user) {
       firstName,
       lastName,
       email,
-      hashedPassword,
+      password,
       phoneNumber,
       city,
       address,
@@ -95,4 +105,11 @@ async function deleteById(id) {
   return nbDeletedElement;
 }
 
-module.exports = { getAll, getById, create, updateById, deleteById };
+module.exports = {
+  getAll,
+  getById,
+  getByEmailWithPassword,
+  create,
+  updateById,
+  deleteById,
+};

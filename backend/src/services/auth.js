@@ -8,15 +8,15 @@ const hashingOptions = {
 };
 
 const hashPassword = (req, res, next) => {
-  if (!req.body.hashedPassword) {
+  if (!req.body.password) {
     res.status(400).json({ message: "Password is required" });
     next();
   }
 
   argon2
-    .hash(req.body.hashedPassword, hashingOptions)
+    .hash(req.body.password, hashingOptions)
     .then((hash) => {
-      req.body.hashedPassword = hash;
+      req.body.password = hash;
       next();
     })
     .catch((err) => {
@@ -24,4 +24,19 @@ const hashPassword = (req, res, next) => {
     });
 };
 
-module.exports = { hashPassword };
+const verifyPassword = async (req, res) => {
+  const { hashed_password: hashedPassword } = req.user;
+  const { password } = req.body;
+
+  try {
+    if (await argon2.verify(hashedPassword, password)) {
+      res.status(200).json({ message: "Login successful" });
+    } else {
+      res.status(401).json({ message: "Login failed" });
+    }
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+
+module.exports = { hashPassword, verifyPassword };
