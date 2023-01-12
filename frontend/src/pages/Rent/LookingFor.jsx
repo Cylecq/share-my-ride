@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import NavBar from "../../components/NavBar";
+import Footer from "../../components/Footer";
 import "./LookingFor.css";
 
 function LookingFor() {
@@ -34,6 +35,7 @@ function LookingFor() {
           </button>
         </Link>
       </div>
+      <Footer />
     </div>
   );
 }
