@@ -3,6 +3,20 @@ import logo from "../assets/logo.png";
 import "./Landing.css";
 
 function Landing() {
+  let path1 = "";
+  let path2 = "";
+
+  if (localStorage.getItem("currentUser")) {
+    const user = JSON.parse(localStorage.getItem("currentUser"));
+    if (user.token) {
+      path1 = "/look";
+      path2 = "/rent";
+    }
+  } else {
+    path1 = "/login";
+    path2 = "/login";
+  }
+
   return (
     <div className="landing-page">
       <nav className="nav-landing">
@@ -12,13 +26,15 @@ function Landing() {
       <div className="top-landing">
         <img src={logo} alt="logo" className="logo-landing" />
         <button type="button" className="buttons">
-          <Link to="/look">Pick ma ride</Link>
+          <Link to={path1}>Pick ma ride</Link>
         </button>
         <button type="button" className="buttons">
-          <Link to="/rent"> Rent ma Ride</Link>
+          <Link to={path2}> Rent ma Ride</Link>
         </button>
       </div>
-      <h3 className="title-page">A little about ourself...</h3>
+      <h3 className="title-page" id="title-bottomlanding">
+        A little about ourself...
+      </h3>
       <div className="bottom-landing">
         <p>
           With Share Ma RideTM, you can rent a ride to another person for a day,

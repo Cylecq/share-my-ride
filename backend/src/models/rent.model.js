@@ -1,7 +1,9 @@
 const { db } = require("./db");
 
-async function getAll() {
-  const [rows] = await db.query("SELECT * FROM rent");
+async function getAll(userId) {
+  const [rows] = await db.query("SELECT * FROM rent WHERE user_id = ?", [
+    userId,
+  ]);
   return rows;
 }
 
