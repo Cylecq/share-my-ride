@@ -17,19 +17,26 @@ function Rent() {
             <input type="text" />
           </div>
           <div className="label-form">
-            <p>Disponibility</p>
-            <label htmlFor="start">Start</label>
+            <label htmlFor="start">
+              <p>Disponibility :</p>
+              Start
+            </label>
             <input type="date" />
             <label htmlFor="end">End</label>
             <input type="date" />
           </div>
           <div className="label-form">
             <label htmlFor="photo">Picture</label>
-            <input type="file" />
+            <input type="file" className="fileinput" />
           </div>
           <div className="label-form">
             <label htmlFor="description">Ma description</label>
             <input type="text" />
+          </div>
+          <div className="buttonbox">
+            <button type="button" className="buttons" id="signupbutton">
+              Submit
+            </button>
           </div>
         </form>
       </div>

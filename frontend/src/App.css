@@ -4,22 +4,22 @@
 }
 
 @font-face {
-  font-family: "typo-round";
-  src: url("./assets/typo/typo-round/Typo_Round_Regular_Demo.otf")
+  font-family: "robaga-rounded";
+  src: url("./assets/typo/robaga-rounded/Robaga_Rounded_Regular.otf")
     format("opentype");
   font-weight: normal;
 }
 
 @font-face {
-  font-family: "typo-round";
-  src: url("./assets/typo/typo-round/Typo_Round_Light_Demo.otf")
+  font-family: "robaga-rounded";
+  src: url("./assets/typo/robaga-rounded/Robaga_Rounded_Light.otf")
     format("opentype");
   font-weight: lighter;
 }
 
 @font-face {
-  font-family: "typo-round";
-  src: url("./assets/typo/typo-round/Typo_Round_Bold_Demo.otf")
+  font-family: "robaga-rounded";
+  src: url("./assets/typo/robaga-rounded/Robaga_Rounded_Bold.otf")
     format("opentype");
   font-weight: bold;
 }
@@ -32,7 +32,7 @@
   --secondary-color: #ffc25c;
   --third-color: #fff6bd;
   --font-title: "dolphins";
-  --font-text: "typo-round";
+  --font-text: "robaga-rounded";
   --border-radius: 20px;
 }
 
@@ -79,7 +79,7 @@ a {
 .title-page {
   font-family: var(--font-title);
   font-size: 45px;
-  color: var(--background-card);
+  color: var(--third-color);
   margin: 0 auto;
   width: 260px;
   margin: 20px auto 20px;
