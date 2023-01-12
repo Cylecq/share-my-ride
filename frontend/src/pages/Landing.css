@@ -21,7 +21,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0 30px;
+  margin: 0 30px 20px;
 }
 
 .logo-landing {
@@ -55,15 +55,6 @@
   color: var(--background-card);
 }
 
-.landing-page > h3 {
-  font-family: var(--font-title);
-  font-size: 45px;
-  color: var(--background-card);
-  margin: 0 auto;
-  width: 260px;
-  margin: 40px auto 0;
-}
-
 .bottom-landing {
   display: flex;
   flex-direction: column;
@@ -72,7 +63,7 @@
   background-color: var(--background-card);
   border-radius: var(--border-radius);
   padding: 20px;
-  margin: 20px 50px 40px;
+  margin: 0 50px 40px;
 }
 
 .bottom-landing > p {

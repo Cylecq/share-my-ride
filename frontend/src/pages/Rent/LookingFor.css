@@ -1,0 +1,27 @@
+.main-look {
+  height: 650px;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.button-look {
+  margin: 15px 40px;
+  height: 60px;
+  border-radius: var(--border-radius);
+  background-color: var(--secondary-color);
+  font-size: 20px;
+  border: solid 2px var(--primary-color);
+  border-bottom: solid 10px var(--primary-color);
+  border-right: solid 10px var(--primary-color);
+  color: var(--background-card);
+  font-weight: 600;
+}
+
+.button-look:active {
+  background-color: var(--primary-color);
+  border: solid 2px var(--secondary-color);
+  border-bottom: solid 10px var(--secondary-color);
+  border-right: solid 10px var(--secondary-color);
+}
