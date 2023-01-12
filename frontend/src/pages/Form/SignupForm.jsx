@@ -10,7 +10,6 @@ function SignupForm() {
           Ma firstname
           <input type="text" name="firstname" />
         </label>
-
         <label>
           Ma lastname
           <input type="text" name="lastname" />
