@@ -1,5 +1,11 @@
+import BurgerMenu from "../../components/BurgerMenu";
+
 function LookingFor() {
-  return <div>LookingFor</div>;
+  return (
+    <div>
+      <BurgerMenu />
+    </div>
+  );
 }
 
 export default LookingFor;
