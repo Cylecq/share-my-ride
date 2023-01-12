@@ -4,6 +4,7 @@
 }
 
 .nav-landing {
+  margin-top: 2vh;
   display: flex;
   justify-content: flex-end;
   font-family: var(--font-text);
