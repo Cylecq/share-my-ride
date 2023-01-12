@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Landing from "./pages/Landing";
 import UsersRides from "./pages/RentTo/UsersRides";
-import RidesRented from "./pages/Rent/RidesRented";
+import MyReservations from "./pages/Rent/MyReservations";
 import LookingFor from "./pages/Rent/LookingFor";
 import ChooseRide from "./pages/Rent/ChooseRide";
 import Rent from "./pages/RentTo/Rent";
@@ -22,7 +22,7 @@ function App() {
           <Route path="/choose" element={<ChooseRide />} />
           <Route path="/rent" element={<Rent />} />
           <Route path="/marides" element={<UsersRides />} />
-          <Route path="/ridesrented" element={<RidesRented />} />
+          <Route path="/myreservations" element={<MyReservations />} />
           <Route path="/modify" element={<Modify />} />
         </Routes>
       </Router>
