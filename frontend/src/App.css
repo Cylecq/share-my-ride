@@ -73,33 +73,6 @@ button,
 a {
   border: none;
   cursor: pointer;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-blockquote,
-p,
-pre,
-dl,
-dd,
-ol,
-ul,
-figure,
-hr,
-fieldset,
-legend {
-  margin: 0;
-  padding: 0;
-}
-
-button,
-a {
-  border: none;
-  cursor: pointer;
   text-decoration: none;
 }
 
@@ -109,5 +82,5 @@ a {
   color: var(--background-card);
   margin: 0 auto;
   width: 260px;
-  margin: 20px auto 10px;
+  margin: 20px auto 20px;
 }
