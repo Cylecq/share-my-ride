@@ -1,7 +1,7 @@
 import useFetch from "../../services/useFetch";
-import "./MyReservations.css";
+import "../RentTo/UsersRides.css";
 import NavBar from "../../components/NavBar";
-import ReservationsCard from "../components/RidesCard";
+import ReservationsCard from "../components/ReservationsCard";
 
 function MyReservations() {
   const { data: rents, loading: loadingRents } = useFetch({
@@ -9,22 +9,29 @@ function MyReservations() {
     path: `/rents?userId=1`,
   });
 
-  // console.log(rents);
-
   return (
     <div className="myreservation-page">
       <NavBar />
       <h1>All my reservations</h1>
       {loadingRents && <h1>Loading...</h1>}
-      <div className="cardContainer">
+      <div className="list">
         {rents &&
           rents.map((rent) => (
             <ReservationsCard
               key={rent.id}
-              name={rent.name}
-              photo={rent.photo}
-              startDate={rent.start_date}
-              endDate={rent.end_date}
+              name={rent.vehicle_name}
+              type={rent.type}
+              photo={rent.vehicle_photo}
+              startDate={rent.start_date
+                .substr(0, 10)
+                .split("-")
+                .reverse()
+                .join("-")}
+              endDate={rent.end_date
+                .substr(0, 10)
+                .split("-")
+                .reverse()
+                .join("-")}
             />
           ))}
       </div>
