@@ -12,7 +12,7 @@ CREATE TABLE user (
   first_name varchar(255) NOT NULL,
   last_name varchar(255) NOT NULL,
   email varchar(255) NOT NULL UNIQUE,
-  hashedPassword varchar(255) NOT NULL,
+  hashed_password varchar(255) NOT NULL,
   phone_number varchar(255) NOT NULL,
   city varchar(255) NOT NULL,
   address varchar(255) NOT NULL,
@@ -23,7 +23,7 @@ CREATE TABLE user (
   PRIMARY KEY (id)
 );
 
-INSERT INTO user (first_name, last_name, email, hashedPassword, phone_number, city, address, postal_code, rate, photo, id_card) 
+INSERT INTO user (first_name, last_name, email, hashed_password, phone_number, city, address, postal_code, rate, photo, id_card) 
   VALUES 
     ("John1", "Doe1", "john.doe1@johndoe.com", "password1", "phone_number1", "paris", "1 rue de john doe", "75001", 5, "photo1", "id_card1"),
     ('John2', 'Doe2', 'john.doe2@johndoe.com', 'password2', 'phone_number2', 'paris', '2 rue de john doe', '75001', 5, 'photo2', 'id_card2'),
