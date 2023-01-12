@@ -23,7 +23,7 @@ function ChooseRide() {
       <h1>Choose a {type}</h1>
       {loadingVehicles && <h1>Loading...</h1>}
       {errorVehicles && <h1>Something went wrong</h1>}
-      <div className="cardContainer">
+      <div className="list">
         {vehicles &&
           vehicles.map((vehicle) => (
             <RidesCard

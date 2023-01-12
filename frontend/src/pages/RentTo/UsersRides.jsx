@@ -15,7 +15,7 @@ function UsersRides() {
       <div className="main-myreservation">
         <h3 className="title-page">All ma rides</h3>
         {loading && <h1>LOADING...</h1>}
-        <div className="vehicle-list">
+        <div className="list">
           {vehicles &&
             vehicles.map((vehicle) => (
               <RidesCard
