@@ -4,6 +4,7 @@
 }
 
 .nav-landing {
+  margin-top: 2vh;
   display: flex;
   justify-content: flex-end;
   font-family: var(--font-text);
@@ -11,7 +12,7 @@
 
 .nav-landing > a {
   margin: 0 20px 0 0;
-  color: var(--background-card);
+  color: var(--secondary-color);
   text-decoration: none;
   font-weight: 600;
 }
@@ -25,13 +26,13 @@
 }
 
 .logo-landing {
-  margin: 20px 0;
+  margin: 50px 0 30px;
   height: 300px;
   padding: 20px 60px;
 }
 
 .buttons {
-  margin: 15px 0;
+  margin: 20px 0;
   padding: 30px 50px;
   border-radius: var(--border-radius);
   background-color: var(--secondary-color);
@@ -56,12 +57,17 @@
   font-family: var(--font-text);
 }
 
+#title-bottomlanding {
+  width: 300px;
+  margin-top: 60px;
+}
+
 .bottom-landing {
   background-color: var(--background-card);
   border-radius: var(--border-radius);
   padding: 20px;
   margin: 0 auto 40px;
-  width: 250px;
+  width: 300px;
 }
 
 .bottom-landing > p {

@@ -1,4 +1,5 @@
 import NavBar from "../../components/NavBar";
+import Footer from "../../components/Footer";
 import "./Rent.css";
 
 function Rent() {
@@ -16,14 +17,24 @@ function Rent() {
             <label htmlFor="name">Name</label>
             <input type="text" />
           </div>
+          <div className="label-form" id="disponibility-box">
+            <div className="date-label">
+              <label htmlFor="start" id="disponibility-label">
+                <p>Disponibility :</p>
+                Start
+              </label>
+              <input type="date" />
+            </div>
+            <div className="date-label">
+              <label htmlFor="end" id="end-label">
+                End
+              </label>
+              <input type="date" />
+            </div>
+          </div>
           <div className="label-form">
-            <label htmlFor="start">
-              <p>Disponibility :</p>
-              Start
-            </label>
-            <input type="date" />
-            <label htmlFor="end">End</label>
-            <input type="date" />
+            <label htmlFor="description">Cost per day in dollars</label>
+            <input type="number" />
           </div>
           <div className="label-form">
             <label htmlFor="photo">Picture</label>
@@ -40,6 +51,7 @@ function Rent() {
           </div>
         </form>
       </div>
+      <Footer />
     </div>
   );
 }
