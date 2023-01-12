@@ -18,7 +18,7 @@
   width: 2em;
   margin-top: 4px;
   height: 0.3em;
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color);
   border-radius: 0.5em;
   z-index: 3;
 }
