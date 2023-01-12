@@ -57,10 +57,6 @@
 }
 
 .bottom-landing {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   background-color: var(--background-card);
   border-radius: var(--border-radius);
   padding: 20px;

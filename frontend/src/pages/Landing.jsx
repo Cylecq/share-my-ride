@@ -25,9 +25,6 @@ function Landing() {
           a weekend, a month or even more. There is no local constraint, go
           biking in the mountains with the bike of someone else !
         </p>
-        <button type="button" className="button">
-          <Link to="/signup">Less reading and more renting !</Link>
-        </button>
       </div>
     </div>
   );
