@@ -1,0 +1,50 @@
+.modify-page {
+}
+
+.card-modify {
+  background-color: var(--third-color);
+  padding: 20px 0 0;
+  margin: 0 45px;
+  border-radius: var(--border-radius);
+}
+
+.modify-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modify-card > img {
+  height: 160px;
+  border-radius: var(--border-radius);
+}
+
+.modify-card > form {
+  display: flex;
+  flex-direction: column;
+  color: var(--primary-color);
+}
+
+.input-desc > input {
+  height: 200ppxsz;
+}
+
+.button-modify {
+  margin: 20px;
+  width: 30%;
+  height: 50px;
+  background-color: var(--secondary-color);
+  border: solid 2px var(--primary-color);
+  border-bottom: solid 8px var(--primary-color);
+  border-right: solid 8px var(--primary-color);
+  border-radius: var(--border-radius);
+  color: var(--background-card);
+  font-weight: 600;
+}
+
+.button-modify:active {
+  background-color: var(--primary-color);
+  border: solid 2px var(--secondary-color);
+  border-bottom: solid 8px var(--secondary-color);
+  border-right: solid 8px var(--secondary-color);
+}

@@ -4,9 +4,11 @@ import NavBar from "../../components/NavBar";
 import ReservationsCard from "../components/ReservationsCard";
 
 function MyReservations() {
+  const { user } = JSON.parse(localStorage.getItem("currentUser"));
+
   const { data: rents, loading: loadingRents } = useFetch({
     method: "get",
-    path: `/rents?userId=1`,
+    path: `/rents?userId=${user.id}`,
   });
 
   return (

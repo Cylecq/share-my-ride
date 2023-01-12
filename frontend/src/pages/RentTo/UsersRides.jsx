@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import useFetch from "../../services/useFetch";
 import NavBar from "../../components/NavBar";
 import Footer from "../../components/Footer";
@@ -5,8 +6,10 @@ import RidesCard from "../components/RidesCard";
 import "./UsersRides.css";
 
 function UsersRides() {
+  const { user } = JSON.parse(localStorage.getItem("currentUser"));
+
   const { data: vehicles, loading } = useFetch({
-    path: "/vehicles?ownerId=1",
+    path: `/vehicles?ownerId=${user.id}`,
     method: "get",
   });
   return (
@@ -18,14 +21,16 @@ function UsersRides() {
         <div className="list">
           {vehicles &&
             vehicles.map((vehicle) => (
-              <RidesCard
-                key={vehicle.id}
-                id={vehicle.id}
-                name={vehicle.name}
-                type={vehicle.type}
-                price={vehicle.price}
-                photo={vehicle.photo}
-              />
+              <Link to="/modify">
+                <RidesCard
+                  key={vehicle.id}
+                  id={vehicle.id}
+                  name={vehicle.name}
+                  type={vehicle.type}
+                  price={vehicle.price}
+                  photo={vehicle.photo}
+                />
+              </Link>
             ))}
         </div>
       </div>
