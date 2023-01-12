@@ -1,6 +1,7 @@
 import React from "react";
+import "./SignupForm.css";
 
-function Form() {
+function SignupForm() {
   return (
     <div>
       <h1>Sign Up</h1>
@@ -14,52 +15,43 @@ function Form() {
           Ma lastname
           <input type="text" name="lastname" />
         </label>
-
         <label>
           Ma password
           <input type="text" name="password" />
         </label>
-
         <label>
           Ma mail
           <input type="text" name="mail" />
         </label>
-
         <label>
           Ma address
           <input type="text" name="address" />
         </label>
-
         <label>
           Ma city
           <input type="text" name="city" />
         </label>
-
         <label>
           Ma zip code
-          <input type="text" name="zip code" />
+          <input type="text" name="zip" />
         </label>
-
         <label>
           Ma phone number
           <input type="text" name="phone" />
         </label>
-
-        <label className="picture">
+        <label className="picture" htmlFor="fileinput">
           Ma picture
-          <input type="file" name="picture" />
-        </label>
-
-        <label>
-          Ma ID card
-          <input type="file" name="idcard" />
+          <input type="file" name="picture" id="fileinput" />
         </label>
       </form>
-      <div className="button">
-        <button type="button">Submit</button>
+
+      <div className="buttonbox">
+        <button type="button" className="buttons" id="signupbutton">
+          Submit
+        </button>
       </div>
     </div>
   );
 }
 
-export default Form;
+export default SignupForm;

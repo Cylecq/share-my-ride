@@ -1,10 +1,12 @@
 import React from "react";
+import "./LoginForm.css";
+// import "../Landing.css";
 
 function LoginForm() {
   return (
     <div>
       <h1>Log In</h1>
-      <form encType="multipart/form-data" className="loginform">
+      <form className="loginform">
         <label>
           Ma mail
           <input type="text" name="mail" />
@@ -15,8 +17,10 @@ function LoginForm() {
           <input type="text" name="password" />
         </label>
       </form>
-      <div className="button">
-        <button type="button">Submit</button>
+      <div className="buttonbox">
+        <button type="button" className="buttons" id="loginbutton">
+          Submit
+        </button>
       </div>
     </div>
   );

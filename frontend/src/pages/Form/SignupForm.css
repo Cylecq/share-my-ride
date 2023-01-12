@@ -1,0 +1,50 @@
+body {
+  display: flex;
+  justify-content: center;
+  background-color: var(--background-color);
+  margin-top: 2vh;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  font-size: 4rem;
+  font-family: var(--font-title);
+  color: var(--third-color);
+  font-size: 3rem;
+}
+
+.signupform {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5rem;
+  align-items: center;
+  color: var(--third-color);
+}
+
+label {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+#signupbutton {
+  margin-top: 4vh;
+  padding: 20px 35px 20px 35px;
+}
+
+input::file-selector-button {
+  background-color: white;
+  border: none;
+  color: var(--primary-color);
+  font-size: 1rem;
+}
+
+#fileinput {
+  text-align: center;
+  height: 100%;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  color: var(--primary-color);
+  font-size: 0.9rem;
+}

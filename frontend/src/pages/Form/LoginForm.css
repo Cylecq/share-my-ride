@@ -1,0 +1,75 @@
+body {
+  display: flex;
+  justify-content: center;
+  background-color: var(--background-color);
+  margin-top: 2vh;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  font-family: var(--font-title);
+  color: var(--third-color);
+  font-size: 4rem;
+  margin-top: 7vh;
+}
+
+.loginform {
+  margin-top: 4vh;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5rem;
+  align-items: center;
+  color: var(--third-color);
+  font-family: var(--font-text);
+  font-weight: bold;
+  gap: 6vh;
+}
+
+label {
+  margin-top: 6rem;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-text);
+}
+
+input {
+  margin-top: 0.5rem;
+  height: 2.5rem;
+  width: 60vw;
+  border-radius: var(--border-radius);
+  background-color: white;
+  border: solid 2px var(--secondary-color);
+  border-bottom: solid 7px var(--secondary-color);
+  border-right: solid 7px var(--secondary-color);
+  transition: transform ease 0.5s, box-shadow ease 0.5s;
+  text-decoration: none;
+}
+
+input:hover {
+  transform: translateY(-5px);
+}
+
+input:active {
+  transform: translateY(-5px);
+  background-color: white;
+  border: solid 2px var(--primary-color);
+  border-bottom: solid 7px var(--primary-color);
+  border-right: solid 7px var(--primary-color);
+}
+
+input:focus {
+  border: solid 2px var(--primary-color);
+  border-bottom: solid 7px var(--primary-color);
+  border-right: solid 7px var(--primary-color);
+}
+
+.buttonbox {
+  display: flex;
+  justify-content: center;
+}
+
+#loginbutton {
+  margin-top: 10vh;
+  padding: 20px 35px 20px 35px;
+}
