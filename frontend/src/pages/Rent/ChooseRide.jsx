@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom";
+import { motion } from "framer-motion";
 import useFetch from "../../services/useFetch";
 import NavBar from "../../components/NavBar";
 import ChooseCards from "./ChooseCards";
@@ -16,7 +17,12 @@ function ChooseRide() {
     path: `/vehicles?type=${type}`,
   });
   return (
-    <div className="chooseRide">
+    <motion.div
+      className="chooseRide"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       <NavBar />
       <h1>Choose a {type}</h1>
       {loadingVehicles && <h1>Loading...</h1>}
@@ -32,7 +38,7 @@ function ChooseRide() {
             />
           ))}
       </div>
-    </div>
+    </motion.div>
   );
 }
 

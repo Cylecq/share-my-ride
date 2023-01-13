@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 import useFetchLazy from "../../services/useFetchLazy";
 import Footer from "../../components/Footer";
 import "./SignupForm.css";
@@ -47,7 +48,11 @@ function SignupForm() {
   }, [newUser]);
 
   return (
-    <div>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       <h1>Sign Up</h1>
       {error?.response?.status === 401 && (
         <p className="error-message">Fill all the fields</p>
@@ -96,7 +101,7 @@ function SignupForm() {
         </div>
       </form>
       <Footer />
-    </div>
+    </motion.div>
   );
 }
 
