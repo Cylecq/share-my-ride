@@ -1,7 +1,7 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import useFetch from "../../services/useFetch";
 import NavBar from "../../components/NavBar";
-import RidesCard from "../components/RidesCard";
+import ChooseCards from "./ChooseCards";
 import "./ChooseRide.css";
 
 function ChooseRide() {
@@ -24,14 +24,12 @@ function ChooseRide() {
       <div className="list">
         {vehicles &&
           vehicles.map((vehicle) => (
-            <Link to="/makeAReservation">
-              <RidesCard
-                key={vehicle.id}
-                name={vehicle.name}
-                photo={vehicle.photo}
-                price={vehicle.bike}
-              />
-            </Link>
+            <ChooseCards
+              key={vehicle.id}
+              name={vehicle.name}
+              photo={vehicle.photo}
+              price={vehicle.bike}
+            />
           ))}
       </div>
     </div>
