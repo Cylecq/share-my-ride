@@ -28,7 +28,12 @@ function LoginForm() {
   };
 
   useEffect(() => {
-    if (currentUser) {
+    if (!currentUser) return;
+    if (currentUser?.user.is_admin) {
+      localStorage.setItem("currentUser", JSON.stringify(currentUser));
+      navigate("/admin");
+    }
+    if (!currentUser?.user.is_admin) {
       localStorage.setItem("currentUser", JSON.stringify(currentUser));
       navigate("/look");
     }
@@ -58,10 +63,10 @@ function LoginForm() {
               Submit
             </button>
           </div>
-          {error?.response.status === 400 && (
+          {error?.response?.status === 400 && (
             <p className="error-message">Fill the form</p>
           )}
-          {error?.response.status === 401 && (
+          {error?.response?.status === 401 && (
             <p className="error-message">Wrong login</p>
           )}
         </form>
