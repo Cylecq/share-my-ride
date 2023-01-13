@@ -1,4 +1,5 @@
-import useFetch from "@services/useFetch";
+import { Link } from "react-router-dom";
+import useFetch from "../../services/useFetch";
 import UserCard from "../components/UserCard";
 import "./Admin.css";
 
@@ -10,7 +11,10 @@ function Admin() {
 
   return (
     <div className="admin">
-      <h1>Admin</h1>
+      <Link to="/">
+        <button type="button">Back</button>
+      </Link>
+      <h1 className="admin_title">Admin</h1>
       <div className="conteneur">
         <h2 className="conteneur_title">All Users</h2>
         <ul>
@@ -22,6 +26,8 @@ function Admin() {
               lastname={user.last_name}
             />
           ))}
+          {!users && <p>Loading...</p>}
+          {users?.length === 0 && <h2 className="no-user">No users</h2>}
         </ul>
       </div>
     </div>
