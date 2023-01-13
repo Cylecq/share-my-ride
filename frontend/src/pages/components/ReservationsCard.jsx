@@ -1,4 +1,5 @@
 import "./RidesCard.css";
+import "./ReservationsCard.css";
 
 const URL_BACKEND = import.meta.env.VITE_BACKEND_URL;
 
@@ -11,7 +12,8 @@ function ReservationsCard({ name, photo, type, startDate, endDate }) {
           {name} - {type}
         </div>
         <div className="card-date">
-          {startDate} / {endDate}
+          <p> {startDate} </p>
+          <p> {endDate}</p>
         </div>
       </div>
     </div>

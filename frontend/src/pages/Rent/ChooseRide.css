@@ -1,8 +1,8 @@
 .card-image {
-  height: 190px;
+  height: 250px;
   background-color: var(--background-card);
-  border: solid 2px var(--secondary-color);
-  border-bottom: solid 7px var(--secondary-color);
+  border: solid 8px var(--primary-color);
+  border-bottom: solid 8px var(--secondary-color);
   border-right: solid 7px var(--secondary-color);
   border-radius: var(--border-radius);
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
@@ -23,4 +23,22 @@
 
 .card-image > div {
   margin: 2px;
+}
+
+.link-to-res {
+  margin-top: 10px;
+  padding: 5px 10px;
+  border-radius: var(--border-radius);
+  background-color: var(--secondary-color);
+  color: var(--background-card);
+  border: solid 4px var(--third-color);
+  border-bottom: solid 4px var(--primary-color);
+  border-right: solid 4px var(--primary-color);
+}
+
+.link-to-res:active {
+  background-color: var(--primary-color);
+  border: solid 4px var(--second-color);
+  border-bottom: solid 4px var(--third-color);
+  border-right: solid 4px var(--third-color);
 }

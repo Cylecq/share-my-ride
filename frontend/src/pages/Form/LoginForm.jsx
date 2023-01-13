@@ -45,7 +45,7 @@ function LoginForm() {
         <h1>Log In</h1>
         <form className="loginform" onSubmit={handleSubmit}>
           <label htmlFor="mail">
-            Ma mail
+            Ma email
             <input type="text" name="mail" ref={mailRef} />
           </label>
 

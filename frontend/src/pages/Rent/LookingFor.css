@@ -14,7 +14,7 @@
   height: 60px;
   border-radius: var(--border-radius);
   background-color: var(--secondary-color);
-  border: solid 2px var(--primary-color);
+  border: solid 7px var(--third-color);
   border-bottom: solid 10px var(--primary-color);
   border-right: solid 10px var(--primary-color);
   display: flex;
@@ -24,13 +24,13 @@
 
 .link-button-look:active {
   background-color: var(--primary-color);
-  border: solid 2px var(--secondary-color);
-  border-bottom: solid 10px var(--secondary-color);
-  border-right: solid 10px var(--secondary-color);
+  border: solid 7px var(--secondary-color);
+  border-bottom: solid 10px var(--third-color);
+  border-right: solid 10px var(--third-color);
 }
 
 .button-look {
-  background-color: var(--secondary-color);
+  background-color: transparent;
   color: var(--background-card);
   font-size: 20px;
   font-weight: 600;
