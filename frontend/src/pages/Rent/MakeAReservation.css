@@ -1,0 +1,18 @@
+.main-make-a {
+  background-color: var(--primary-color);
+  border-radius: var(--border-radius);
+  margin: 0 25px;
+  padding: 20px;
+  padding: 20px;
+}
+
+.main-make-a > p {
+  margin: 20px 10px;
+}
+
+.main-make-a > a {
+  background-color: var(--secondary-color);
+  border-bottom: solid 7px var(--third-color);
+  border-right: solid 7px var(--third-color);
+  border-radius: var(--border-radius);
+}
