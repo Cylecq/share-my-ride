@@ -34,7 +34,7 @@ function ChooseRide() {
               key={vehicle.id}
               name={vehicle.name}
               photo={vehicle.photo}
-              price={vehicle.bike}
+              price={vehicle.price}
             />
           ))}
       </div>
