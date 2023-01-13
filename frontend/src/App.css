@@ -48,7 +48,7 @@ body {
   font-family: var(--font-text);
   list-style: none;
   text-decoration: none;
-  background-color: var(--background-color);
+  /* background-color: var(--background-color); */
   min-height: 100%;
   position: relative;
 }
@@ -82,4 +82,23 @@ a {
   width: 80%;
   margin: 20px auto 20px;
   text-align: center;
+}
+
+body {
+  background: linear-gradient(-45deg, #fff6bd, #23a6d5, #4e807b, #fcfcfc);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  height: 100vh;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
