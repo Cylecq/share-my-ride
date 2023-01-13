@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import useFetch from "../../services/useFetch";
 import NavBar from "../../components/NavBar";
 import Footer from "../../components/Footer";
@@ -12,9 +13,14 @@ function UsersRides() {
     method: "get",
   });
   return (
-    <div className="myreservation-page">
+    <motion.div
+      className="myreservation-page"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       <NavBar />
-      <div className="main-myreservation">
+      <motion.div className="main-myreservation">
         <h3 className="title-page">All ma rides</h3>
         {loading && <h1>LOADING...</h1>}
         <div className="list">
@@ -30,9 +36,9 @@ function UsersRides() {
               />
             ))}
         </div>
-      </div>
+      </motion.div>
       <Footer />
-    </div>
+    </motion.div>
   );
 }
 

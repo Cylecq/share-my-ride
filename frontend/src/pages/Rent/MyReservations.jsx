@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import useFetch from "../../services/useFetch";
 import "../RentTo/UsersRides.css";
 import NavBar from "../../components/NavBar";
@@ -12,7 +13,12 @@ function MyReservations() {
   });
 
   return (
-    <div className="myreservation-page">
+    <motion.div
+      className="myreservation-page"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       <NavBar />
       <h1 className="title-page">All my reservations</h1>
       {loadingRents && <h1>Loading...</h1>}
@@ -37,7 +43,7 @@ function MyReservations() {
             />
           ))}
       </div>
-    </div>
+    </motion.div>
   );
 }
 

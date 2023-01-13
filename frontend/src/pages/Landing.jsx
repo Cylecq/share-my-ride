@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import logo from "../assets/logo.png";
 import Footer from "../components/Footer";
 import "./Landing.css";
@@ -19,7 +20,12 @@ function Landing() {
   }
 
   return (
-    <div className="landing-page">
+    <motion.div
+      className="landing-page"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       <nav className="nav-landing">
         <Link to="/signup">Sign Up</Link>
         <Link to="/login">Log In</Link>
@@ -36,15 +42,15 @@ function Landing() {
       <h3 className="title-page" id="title-bottomlanding">
         A little about ourself...
       </h3>
-      <div className="bottom-landing">
+      <motion.div className="bottom-landing">
         <p>
           With Share Ma RideTM, you can rent a ride to another person for a day,
           a weekend, a month or even more. There is no local constraint, go
           biking in the mountains with the bike of someone else !
         </p>
-      </div>
+      </motion.div>
       <Footer />
-    </div>
+    </motion.div>
   );
 }
 

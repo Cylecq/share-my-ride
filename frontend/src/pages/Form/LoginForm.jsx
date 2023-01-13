@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 import useFetchLazy from "../../services/useFetchLazy";
 import Footer from "../../components/Footer";
 import "./LoginForm.css";
@@ -34,7 +35,12 @@ function LoginForm() {
   }, [currentUser]);
 
   return (
-    <div className="login-page">
+    <motion.div
+      className="login-page"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       <div>
         <h1>Log In</h1>
         <form className="loginform" onSubmit={handleSubmit}>
@@ -62,7 +68,7 @@ function LoginForm() {
       </div>
 
       <Footer />
-    </div>
+    </motion.div>
   );
 }
 export default LoginForm;
