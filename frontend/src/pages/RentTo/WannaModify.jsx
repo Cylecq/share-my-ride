@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import useFetch from "../../services/useFetch";
 import NavBar from "../../components/NavBar";
 import Footer from "../../components/Footer";
@@ -11,7 +12,12 @@ function WannaModify() {
     method: "get",
   });
   return (
-    <div className="modify-page">
+    <motion.div
+      className="modify-page"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       <NavBar />
       <div>
         <h3 className="title-page">Wanna modify ?</h3>
@@ -49,7 +55,7 @@ function WannaModify() {
         </div>
       </div>
       <Footer />
-    </div>
+    </motion.div>
   );
 }
 

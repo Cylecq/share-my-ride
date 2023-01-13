@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 import useFetchLazy from "../../services/useFetchLazy";
 import Footer from "../../components/Footer";
 import "./LoginForm.css";
@@ -27,14 +28,24 @@ function LoginForm() {
   };
 
   useEffect(() => {
-    if (currentUser) {
+    if (!currentUser) return;
+    if (currentUser?.user.is_admin) {
+      localStorage.setItem("currentUser", JSON.stringify(currentUser));
+      navigate("/admin");
+    }
+    if (!currentUser?.user.is_admin) {
       localStorage.setItem("currentUser", JSON.stringify(currentUser));
       navigate("/look");
     }
   }, [currentUser]);
 
   return (
-    <div className="login-page">
+    <motion.div
+      className="login-page"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       <div>
         <h1>Log In</h1>
         <form className="loginform" onSubmit={handleSubmit}>
@@ -52,17 +63,17 @@ function LoginForm() {
               Submit
             </button>
           </div>
-          {error?.response.status === 400 && (
+          {error?.response?.status === 400 && (
             <p className="error-message">Fill the form</p>
           )}
-          {error?.response.status === 401 && (
+          {error?.response?.status === 401 && (
             <p className="error-message">Wrong login</p>
           )}
         </form>
       </div>
 
       <Footer />
-    </div>
+    </motion.div>
   );
 }
 export default LoginForm;

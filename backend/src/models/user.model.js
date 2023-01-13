@@ -1,7 +1,9 @@
 const { db } = require("./db");
 
 async function getAll() {
-  const [rows] = await db.query("SELECT * FROM user");
+  const [rows] = await db.query(
+    "SELECT id, first_name, last_name FROM user WHERE is_admin = 0"
+  );
 
   return rows;
 }

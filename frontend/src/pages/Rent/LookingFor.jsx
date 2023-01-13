@@ -1,11 +1,17 @@
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import NavBar from "../../components/NavBar";
 import Footer from "../../components/Footer";
 import "./LookingFor.css";
 
 function LookingFor() {
   return (
-    <div className="look-page">
+    <motion.div
+      className="look-page"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       <NavBar />
       <div className="main-look">
         <h1 className="title-page">What are ya looking for ?</h1>
@@ -36,7 +42,7 @@ function LookingFor() {
         </Link>
       </div>
       <Footer />
-    </div>
+    </motion.div>
   );
 }
 
