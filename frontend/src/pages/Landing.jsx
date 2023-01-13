@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
-import Footer from "../components/Footer";
 import "./Landing.css";
 
 function Landing() {
@@ -43,7 +42,6 @@ function Landing() {
           biking in the mountains with the bike of someone else !
         </p>
       </div>
-      <Footer />
     </div>
   );
 }

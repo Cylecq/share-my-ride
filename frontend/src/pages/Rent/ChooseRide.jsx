@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import useFetch from "../../services/useFetch";
 import NavBar from "../../components/NavBar";
 import ChooseCards from "./ChooseCards";
+import Footer from "../../components/Footer";
 import "./ChooseRide.css";
 
 function ChooseRide() {
@@ -32,6 +33,7 @@ function ChooseRide() {
             />
           ))}
       </div>
+      <Footer />
     </div>
   );
 }
