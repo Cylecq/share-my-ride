@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import useFetch from "../../services/useFetch";
 import "../RentTo/UsersRides.css";
 import NavBar from "../../components/NavBar";
+import Footer from "../../components/Footer";
 import ReservationsCard from "../components/ReservationsCard";
 
 function MyReservations() {
@@ -43,6 +44,7 @@ function MyReservations() {
             />
           ))}
       </div>
+      <Footer />
     </motion.div>
   );
 }

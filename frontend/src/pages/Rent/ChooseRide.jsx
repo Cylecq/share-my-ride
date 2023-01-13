@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import useFetch from "../../services/useFetch";
 import NavBar from "../../components/NavBar";
 import ChooseCards from "./ChooseCards";
+import Footer from "../../components/Footer";
 import "./ChooseRide.css";
 
 function ChooseRide() {
@@ -38,6 +39,7 @@ function ChooseRide() {
             />
           ))}
       </div>
+      <Footer />
     </motion.div>
   );
 }

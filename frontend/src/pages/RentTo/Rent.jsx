@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import NavBar from "../../components/NavBar";
-import Footer from "../../components/Footer";
 import "./Rent.css";
 
 function Rent() {
@@ -57,7 +56,6 @@ function Rent() {
           </div>
         </form>
       </div>
-      <Footer />
     </motion.div>
   );
 }
