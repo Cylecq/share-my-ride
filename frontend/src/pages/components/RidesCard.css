@@ -5,11 +5,11 @@
 }
 
 .card-image {
-  height: 190px;
+  height: 200px;
   background-color: var(--background-card);
-  border: solid 2px var(--secondary-color);
-  border-bottom: solid 7px var(--secondary-color);
-  border-right: solid 7px var(--secondary-color);
+  border: solid 8px var(--primary-color);
+  border-bottom: solid 8px var(--secondary-color);
+  border-right: solid 8px var(--secondary-color);
   border-radius: var(--border-radius);
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
   display: flex;
@@ -21,7 +21,7 @@
 }
 
 .card-image > img {
-  height: 100px;
+  height: 95px;
   border-radius: var(--border-radius);
   margin-bottom: 10px;
   margin-top: 10px;
@@ -29,4 +29,8 @@
 
 .card-image > div {
   margin: 2px;
+}
+
+.card-image > div > a {
+  background-color: var(--secondary-color);
 }

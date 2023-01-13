@@ -9,7 +9,13 @@ function MakeAReservation() {
       <NavBar />
       <h3 className="title-page">Ma man might contact you</h3>
       <div className="main-make-a">
-        <p>Are you ready to become a true rider.</p>
+        <div className="make-text">
+          <p>
+            Are you ready to become <br />a true rider ?
+          </p>
+          <p>Make sure to ride safe first !</p>
+          <p>Don't get hurt like the capitalism got you hurt .</p>
+        </div>
         <Link to="/">Go home</Link>
       </div>
       <Footer />

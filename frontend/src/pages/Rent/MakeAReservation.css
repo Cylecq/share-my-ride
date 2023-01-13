@@ -1,18 +1,32 @@
 .main-make-a {
-  background-color: var(--primary-color);
-  border-radius: var(--border-radius);
-  margin: 0 25px;
-  padding: 20px;
-  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.main-make-a > p {
-  margin: 20px 10px;
+.make-text {
+  text-align: center;
+  margin: 30px 45px 50px;
+  padding: 20px;
+  padding: 20px;
+  background-color: var(--background-card);
+  border-radius: var(--border-radius);
+}
+
+.make-text > p {
+  margin: 10px 0;
+  font-size: 18px;
 }
 
 .main-make-a > a {
+  padding: 20px;
+  color: var(--background-card);
+  font-weight: 600;
+  font-size: 18px;
   background-color: var(--secondary-color);
-  border-bottom: solid 7px var(--third-color);
-  border-right: solid 7px var(--third-color);
+  border: solid 7px var(--third-color);
+  border-bottom: solid 7px var(--primary-color);
+  border-right: solid 7px var(--primary-color);
   border-radius: var(--border-radius);
 }
