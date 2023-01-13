@@ -27,7 +27,12 @@ function LoginForm() {
   };
 
   useEffect(() => {
-    if (currentUser) {
+    if (!currentUser) return;
+    if (currentUser?.user.is_admin) {
+      localStorage.setItem("currentUser", JSON.stringify(currentUser));
+      navigate("/rent");
+    }
+    if (!currentUser?.user.is_admin) {
       localStorage.setItem("currentUser", JSON.stringify(currentUser));
       navigate("/look");
     }
