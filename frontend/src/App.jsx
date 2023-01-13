@@ -10,6 +10,7 @@ import "./App.css";
 import LoginForm from "./pages/Form/LoginForm";
 import SignupForm from "./pages/Form/SignupForm";
 import MakeAReservation from "./pages/Rent/MakeAReservation";
+import Admin from "./pages/Admin/Admin";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/myreservations" element={<MyReservations />} />
           <Route path="/modify" element={<WannaModify />} />
           <Route path="/makeAReservation" element={<MakeAReservation />} />
+          <Route path="/admin" element={<Admin />} />
         </Routes>
       </Router>
     </div>
